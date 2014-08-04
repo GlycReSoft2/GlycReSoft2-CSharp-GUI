@@ -1,0 +1,224 @@
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\GlyPeSoft.exe
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\GlyPeSoft.pdb
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.AboutBox1.resources
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.Form1.resources
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.tag1Result.resources
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.glycopeptidesResult.resources
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlyPeSoft.exe
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlyPeSoft.pdb
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.parameters.resources
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.csprojResolveAssemblyReference.cache
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.csproj.GenerateResource.Cache
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.composition.resources
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\compositionsCurrent.cpos
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\compositionsDefault.cpos
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\parametersDefault.para
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Parameters.para
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\MathParserTK.exe
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\MathParserTK.pdb
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.Math.dll
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.Statistics.dll
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.dll
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.Math.pdb
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.Math.xml
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.Statistics.pdb
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.Statistics.xml
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.pdb
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.xml
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.Properties.Resources.resources
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\AForge.dll
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\AForge.Math.dll
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\AForge.xml
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\AForge.Math.xml
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\GlyPeSoft.exe.config
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.PleaseWait.resources
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.Features.resources
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\FeatureCurrent.fea
+D:\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\FeatureDefault.fea
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.csprojResolveAssemblyReference.cache
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.AboutBox1.resources
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.composition.resources
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.Form1.resources
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.PleaseWait.resources
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.parameters.resources
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.Features.resources
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.Properties.Resources.resources
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.tag1Result.resources
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.csproj.GenerateResource.Cache
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\compositionsCurrent.cpos
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\compositionsDefault.cpos
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\FeatureCurrent.fea
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\FeatureDefault.fea
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\parametersDefault.para
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Parameters.para
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.Statistics.dll
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\MathParserTK.exe
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\AForge.dll
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.Math.dll
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.dll
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\AForge.Math.dll
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.Statistics.pdb
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.Statistics.xml
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\MathParserTK.pdb
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\AForge.xml
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.Math.pdb
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.Math.xml
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.pdb
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.xml
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\AForge.Math.xml
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\FeatureCurrent.fea
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\FeatureDefault.fea
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\parametersDefault.para
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Parameters.para
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\AForge.dll
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.Math.dll
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.dll
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\AForge.Math.dll
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.Statistics.pdb
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.Statistics.xml
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\MathParserTK.pdb
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\AForge.xml
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.Math.pdb
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.Math.xml
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.pdb
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.xml
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\AForge.Math.xml
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.csprojResolveAssemblyReference.cache
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.AboutBox1.resources
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.composition.resources
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.Form1.resources
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.PleaseWait.resources
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.parameters.resources
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.Features.resources
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.Properties.Resources.resources
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.tag1Result.resources
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.csproj.GenerateResource.Cache
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\bin\Debug\GlyPeSoft.exe.config
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\obj\x86\Debug\GlyPeSoft.exe
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\obj\x86\Debug\GlyPeSoft.pdb
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\bin\Debug\compositionsCurrent.cpos
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\bin\Debug\compositionsDefault.cpos
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\bin\Debug\FeatureCurrent.fea
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\bin\Debug\FeatureDefault.fea
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\bin\Debug\parametersDefault.para
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\bin\Debug\Parameters.para
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\bin\Debug\GlyPeSoft.exe
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\bin\Debug\GlyPeSoft.pdb
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\bin\Debug\Accord.Statistics.dll
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\bin\Debug\MathParserTK.exe
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\bin\Debug\AForge.dll
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\bin\Debug\Accord.Math.dll
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\bin\Debug\Accord.dll
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\bin\Debug\AForge.Math.dll
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\bin\Debug\Accord.Statistics.pdb
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\bin\Debug\Accord.Statistics.xml
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\bin\Debug\MathParserTK.pdb
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\bin\Debug\AForge.xml
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\bin\Debug\Accord.Math.pdb
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\bin\Debug\Accord.Math.xml
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\bin\Debug\Accord.pdb
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\bin\Debug\Accord.xml
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\bin\Debug\AForge.Math.xml
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\obj\x86\Debug\GlycReSoft.AboutBox1.resources
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\obj\x86\Debug\GlycReSoft.composition.resources
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\obj\x86\Debug\GlycReSoft.Form1.resources
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\obj\x86\Debug\GlycReSoft.PleaseWait.resources
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\obj\x86\Debug\GlycReSoft.parameters.resources
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\obj\x86\Debug\GlycReSoft.Features.resources
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\obj\x86\Debug\GlycReSoft.Properties.Resources.resources
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\obj\x86\Debug\GlycReSoft.tag1Result.resources
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\obj\x86\Debug\GlycReSoft.glycopeptidesResult.resources
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_07222013\GlycReSoft\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.Welcome.resources
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.FormerResults.resources
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.Welcome.resources
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.FormerResults.resources
+C:\Users\Nicholas\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_08152013\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\GlyPeSoft.exe.config
+C:\Users\Nicholas\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_08152013\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlyPeSoft.exe
+C:\Users\Nicholas\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_08152013\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlyPeSoft.pdb
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_08152013\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\GlyPeSoft.exe.config
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_08152013\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlyPeSoft.exe
+C:\Users\kkhatri-adm\Dropbox\Glycresoft 2013\Ken's Folder\GlycReSoft2_08152013\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlyPeSoft.pdb
+C:\Users\Nicholas\Desktop\GlycReSoft2_08152013\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\GlyPeSoft.exe.config
+C:\Users\Nicholas\Desktop\GlycReSoft2_08152013\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlyPeSoft.exe
+C:\Users\Nicholas\Desktop\GlycReSoft2_08152013\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlyPeSoft.pdb
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2.exe.config
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft2.pdb
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2.exe
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2.pdb
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft2.exe
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2.xml
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2.exe.config
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft2.exe
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft2.pdb
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2.exe
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2.pdb
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2.xml
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\compositionsCurrent.cpos
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\compositionsDefault.cpos
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Accord.Statistics.dll
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\MathParserTK.exe
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2V1\FuntionalForms\AboutBox1.resx
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2V1\FuntionalForms\AboutBox1.cs
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2V1\FuntionalForms\AboutBox1.Designer.cs
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2V1\FuntionalForms\AboutBox1.resx
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2V1\FuntionalForms\AboutBox1.cs
+D:\DropBox\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2V1\FuntionalForms\AboutBox1.Designer.cs
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\help.chm
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2.exe.manifest
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2.application
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft2.exe.manifest
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft2.application
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Microsoft.VisualBasic.Compatibility.Data.dll
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Microsoft.VisualBasic.Compatibility.dll
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+D:\Dropbox\GlycReSoft2\GlycReSoft2\GlycReSoft2\GlycReSoft\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.xml
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\compositionsCurrent.cpos
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\compositionsDefault.cpos
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\help.chm
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\FeatureCurrent.fea
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\FeatureDefault.fea
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2V1\FuntionalForms\AboutBox1.resx
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2V1\FuntionalForms\AboutBox1.cs
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2V1\FuntionalForms\AboutBox1.Designer.cs
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\parametersDefault.para
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\Parameters.para
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2.exe.config
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2.exe.manifest
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2.application
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2.exe
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2.pdb
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\GlycReSoft2.xml
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\Accord.dll
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\Accord.Math.dll
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\Accord.Statistics.dll
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\AForge.dll
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\AForge.Math.dll
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\MathParserTK.exe
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\Microsoft.VisualBasic.Compatibility.Data.dll
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\Microsoft.VisualBasic.Compatibility.dll
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\MathParserTK.pdb
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.xml
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\Accord.xml
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\AForge.xml
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\AForge.Math.xml
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\Accord.Math.xml
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Debug\Accord.Statistics.xml
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.csprojResolveAssemblyReference.cache
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.AboutBox1.resources
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.composition.resources
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.Welcome.resources
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.Form1.resources
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.PleaseWait.resources
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.FormerResults.resources
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.parameters.resources
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.Features.resources
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.Properties.Resources.resources
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.tag1Result.resources
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft.csproj.GenerateResource.Cache
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft2.exe.manifest
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft2.application
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft2.exe
+C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Debug\GlycReSoft2.pdb

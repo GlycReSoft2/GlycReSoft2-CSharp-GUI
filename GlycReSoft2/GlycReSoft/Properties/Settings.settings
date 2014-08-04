@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GlycReSoft.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Desk" Type="System.Environment+SpecialFolder" Scope="User">
+      <Value Profile="(Default)">Desktop</Value>
+    </Setting>
+    <Setting Name="Desk1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Desktop</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

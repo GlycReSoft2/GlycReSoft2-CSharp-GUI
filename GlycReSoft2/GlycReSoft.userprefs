@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="GlycReSoft\GlycReSoft2V1\AMFunctions\GetDeconData.cs">
+    <Files>
+      <File FileName="GlycReSoft\GlycReSoft2V1\Algorithms\falseDataset.cs" Line="13" Column="20" />
+      <File FileName="GlycReSoft\GlycReSoft2V1\Algorithms\supervisedLearning.cs" Line="14" Column="21" />
+      <File FileName="GlycReSoft\GlycReSoft2V1\AMFunctions\GetDeconData.cs" Line="66" Column="34" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
