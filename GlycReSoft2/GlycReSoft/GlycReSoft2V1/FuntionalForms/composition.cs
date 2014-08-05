@@ -1432,7 +1432,7 @@ namespace GlycReSoft
         //This puts comhypo data into a datatable.
         private DataTable genDT(List<comphypo> UltFinalAns, generatorData GD)
         {
-            Console.WriteLine("---genDT---");
+            //Console.WriteLine("---genDT---");
             DataTable hypo = new DataTable();
             List<string> elementIDs = new List<string>();
             List<string> molname = new List<string>();
@@ -1458,16 +1458,16 @@ namespace GlycReSoft
                 hypo.Columns.Add(elementIDs[i], typeof(Int32));
             }
             #region Debugging
-            Console.WriteLine("---Molecule Names---");
-            foreach (string s in molname)
-            {
-                Console.WriteLine(s);
-            }
-            Console.WriteLine("---Element IDs---");
-            foreach (string s in elementIDs)
-            {
-                Console.WriteLine(s);
-            }
+            //Console.WriteLine("---Molecule Names---");
+            //foreach (string s in molname)
+            //{
+            //    Console.WriteLine(s);
+            //}
+            ////Console.WriteLine("---Element IDs---");
+            //foreach (string s in elementIDs)
+            //{
+            //    Console.WriteLine(s);
+            //}
             #endregion
             hypo.Columns.Add("Compositions", typeof(String));
             for (int i = 0; i < UltFinalAns[0].eqCounts.Count(); i++)
@@ -2717,6 +2717,10 @@ namespace GlycReSoft
                 return string.Format(repr, elementIDs, molnamesString) ;
             }
 
+            /// <summary>
+            /// Create a deep copy of the comphypo object.
+            /// </summary>
+            /// <returns></returns>
             public comphypo Clone()
             {
                 comphypo dup = new comphypo();
@@ -2759,6 +2763,11 @@ namespace GlycReSoft
                 return dup;
             }
 
+            /// <summary>
+            /// Create a deep copy of a list of comphypo objects.
+            /// </summary>
+            /// <param name="hypothesis"></param>
+            /// <returns></returns>
             public static List<comphypo> CloneList(List<comphypo> hypothesis)
             {
                 List<comphypo> dup = new List<comphypo>();
@@ -2797,7 +2806,20 @@ namespace GlycReSoft
             public String NextAA;
             public Int32 numGly;
         }
-        
+
+        class BackgroundHypothesisFromDBArgument
+        {
+            public List<comphypo> Hypothesis;
+            public generatorData GD;
+            public bool HasAdduct;
+            public String AdductModFormula;
+            public String AdductReplaceFormula;
+            public int AdductLowerBound;
+            public int AdductUpperBound;
+
+
+        }
+
         private void GeneratePrecomputedHypothesisButton_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Button");
@@ -2832,12 +2854,16 @@ namespace GlycReSoft
                 return;
             }
             List<comphypo> compHypothesis = getCompHypoFromStream(database.ToStream());
+            BackgroundWorker backgroundHypothesisFromDBWorker = new BackgroundWorker();
+            backgroundHypothesisFromDBWorker.DoWork += backgroundHypothesisFromDBWorker_DoWork;
+            backgroundHypothesisFromDBWorker.RunWorkerCompleted += backgroundHypothesisFromDBWorker_RunWorkerCompleted;          
+
             //foreach (comphypo c in compHypothesis)
             //{
             //    Console.WriteLine(c);
             //}
             Console.WriteLine(compHypothesis.Count());
-            #region Handle Adducts
+            
             ///Check if the UI indicates there should be adducts. If so, apply
             ///the adduct modification transformation over the range given by the bounds.
             ///Otherwise generate the hypothesis from the resource stream unmodified.
@@ -2852,8 +2878,8 @@ namespace GlycReSoft
             int adductUpperBoundVal = 0;
             try
             {
-                bool hasAdductFormula = ((adductModFormula == null) || (adductModFormula == ""));
-                bool hasReplaceFormula = ((adductReplaceFormula == null) || (adductReplaceFormula == ""));
+                bool hasAdductFormula = !((adductModFormula == null) || (adductModFormula == ""));
+                bool hasReplaceFormula = !((adductReplaceFormula == null) || (adductReplaceFormula == ""));
                 if (hasAdduct && hasReplaceFormula)
                 {
                     adductLowerBoundVal = Convert.ToInt32(adductLowerBoundStr);
@@ -2868,17 +2894,71 @@ namespace GlycReSoft
                 Console.WriteLine("No Adducts");
                 hasAdduct = false;
             }
+            backgroundHypothesisFromDBWorker.RunWorkerAsync(
+                new BackgroundHypothesisFromDBArgument{ 
+                    Hypothesis = compHypothesis,                      
+                    HasAdduct = hasAdduct,
+                    GD = GD,
+                    AdductModFormula = adductModFormula,
+                    AdductReplaceFormula = adductReplaceFormula,
+                    AdductLowerBound = adductLowerBoundVal,
+                    AdductUpperBound = adductUpperBoundVal
+                      
+            });
+            //if (hasAdduct)
+            //{
+            //    Console.WriteLine("Doing Adducts");   
+            //    GD.Modification = new string[] { adductModFormula, adductReplaceFormula };
+            //    string addrepStr = adductModFormula + "/" + adductReplaceFormula;
+            //    double adductMassDelta = GD.AdductMassDelta();
+            //    List<comphypo> modifiedHypothesis = new List<comphypo>();
+            //    for (int c = adductLowerBoundVal; c < adductUpperBoundVal; c++)
+            //    {
+            //        List<comphypo> unmodifiedCopy = comphypo.CloneList(compHypothesis);
+            //        foreach (comphypo row in unmodifiedCopy)
+            //        {
+            //            row.AddRep = addrepStr;
+            //            row.AdductNum = c;
+            //            row.MW += adductMassDelta * c;
+            //        }
+            //        modifiedHypothesis.AddRange(unmodifiedCopy);
+            //    }
+            //    compHypothesis = modifiedHypothesis;
+            //} 
+            //
 
-            if (hasAdduct)
+            //Console.WriteLine(compHypothesis.Count());
+
+            //theComhypoOnTab2 = genDT(compHypothesis, GD);
+            //dataGridView2.DataSource = theComhypoOnTab2;
+            //button6.Enabled = true;
+
+            //tabControl1.SelectedTab = tabPage2;
+        }
+            
+        void backgroundHypothesisFromDBWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            theComhypoOnTab2 = e.Result as DataTable;
+            dataGridView2.DataSource = theComhypoOnTab2;
+            button6.Enabled = true;
+
+            tabControl1.SelectedTab = tabPage2;
+        }
+
+        void backgroundHypothesisFromDBWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            
+            Console.WriteLine(e.Argument);
+            var x = e.Argument as BackgroundHypothesisFromDBArgument;
+            if (x.HasAdduct)
             {
-                Console.WriteLine("Doing Adducts");   
-                GD.Modification = new string[] { adductModFormula, adductReplaceFormula };
-                string addrepStr = adductModFormula + "/" + adductReplaceFormula;
-                double adductMassDelta = GD.AdductMassDelta();
+                x.GD.Modification = new string[] { x.AdductModFormula, x.AdductReplaceFormula };
+                string addrepStr = x.AdductModFormula + "/" + x.AdductReplaceFormula;
+                double adductMassDelta = x.GD.AdductMassDelta();
                 List<comphypo> modifiedHypothesis = new List<comphypo>();
-                for (int c = adductLowerBoundVal; c < adductUpperBoundVal; c++)
+                for (int c = x.AdductLowerBound; c < x.AdductUpperBound; c++)
                 {
-                    List<comphypo> unmodifiedCopy = comphypo.CloneList(compHypothesis);
+                    List<comphypo> unmodifiedCopy = comphypo.CloneList(x.Hypothesis);
                     foreach (comphypo row in unmodifiedCopy)
                     {
                         row.AddRep = addrepStr;
@@ -2887,17 +2967,15 @@ namespace GlycReSoft
                     }
                     modifiedHypothesis.AddRange(unmodifiedCopy);
                 }
-                compHypothesis = modifiedHypothesis;
-            } 
-            #endregion
+                x.Hypothesis = modifiedHypothesis;
+            }
+            e.Result = genDT(x.Hypothesis, x.GD); ;
+            //theComhypoOnTab2 = 
+            //dataGridView2.DataSource = theComhypoOnTab2;
+            //button6.Enabled = true;
 
-            Console.WriteLine(compHypothesis.Count());
-
-            theComhypoOnTab2 = genDT(compHypothesis, GD);
-            dataGridView2.DataSource = theComhypoOnTab2;
-            button6.Enabled = true;
+            //tabControl1.SelectedTab = tabPage2;
         }
-
 
     }
 }

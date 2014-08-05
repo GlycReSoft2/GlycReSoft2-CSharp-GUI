@@ -368,9 +368,6 @@ C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\Glyc
 C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Release\GlycReSoft.csproj.GenerateResource.Cache
 C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Release\GlycReSoft2.exe.manifest
 C:\Users\jaklein\Dropbox\Glycomics Sandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Release\GlycReSoft2.application
-C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\GlycReSoft2.exe.config
-C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Release\GlycReSoft2.exe
-C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Release\GlycReSoft2.pdb
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\compositionsCurrent.cpos
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\compositionsDefault.cpos
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\help.chm
@@ -381,6 +378,7 @@ C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycR
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\GlycReSoft2V1\FuntionalForms\AboutBox1.Designer.cs
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\parametersDefault.para
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\Parameters.para
+C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\GlycReSoft2.exe.config
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\GlycReSoft2.exe.manifest
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\GlycReSoft2.application
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\GlycReSoft2.exe
@@ -392,16 +390,20 @@ C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycR
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\AForge.dll
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\AForge.Math.dll
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\MathParserTK.exe
+C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\Microsoft.Dynamic.dll
+C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\Microsoft.Scripting.dll
+C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\Microsoft.Scripting.Metadata.dll
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\Microsoft.VisualBasic.Compatibility.Data.dll
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\Microsoft.VisualBasic.Compatibility.dll
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\MathParserTK.pdb
-C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.xml
+C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\Microsoft.Dynamic.xml
+C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\Microsoft.Scripting.xml
+C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\Microsoft.Scripting.Metadata.xml
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\Accord.xml
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\AForge.xml
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\AForge.Math.xml
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\Accord.Math.xml
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\bin\Release\Accord.Statistics.xml
-C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Release\GlycReSoft.csprojResolveAssemblyReference.cache
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Release\GlycReSoft.AboutBox1.resources
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Release\GlycReSoft.composition.resources
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Release\GlycReSoft.Welcome.resources
@@ -415,3 +417,5 @@ C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycR
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Release\GlycReSoft.csproj.GenerateResource.Cache
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Release\GlycReSoft2.exe.manifest
 C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Release\GlycReSoft2.application
+C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Release\GlycReSoft2.exe
+C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_04232014\GlycReSoft2\GlycReSoft\obj\x86\Release\GlycReSoft2.pdb

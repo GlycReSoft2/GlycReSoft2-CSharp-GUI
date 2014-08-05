@@ -794,6 +794,7 @@ namespace GlycReSoft
             Double adductmass = 0;
             Double replacementmass = 0;
             periodicTable pTable = new periodicTable();
+            Console.WriteLine("Adduct String {0}, {1} Adduct Matches {1}", adduct, adducts);
             //For each element in adducts, add up their masses.
             foreach (Match add in adducts)
             {
@@ -813,8 +814,10 @@ namespace GlycReSoft
                 adductmass = adductmass + number * pTable.getMass(element);
             }
             //For each element in replacements, add up their masses.
-            foreach (String el in replacements)
+            Console.WriteLine("Replacement String {0}, {1} Replacement Matches {1}", replacement, replacements);
+            foreach (Match rep in replacements)
             {
+                String el = Convert.ToString(rep);
                 String element = Convert.ToString(Regex.Match(el, elementregexpattern));
                 String snumber = Convert.ToString(Regex.Match(el, numberregexpattern));
                 Int32 number = 0;

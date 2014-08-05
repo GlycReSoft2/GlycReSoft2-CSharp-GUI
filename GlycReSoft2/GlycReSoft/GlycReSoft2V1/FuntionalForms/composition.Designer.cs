@@ -190,7 +190,7 @@
             this.PrecomputedDatabasesPanel.Controls.Add(this.UseNLinkedHumanGlycomeDBRadio);
             this.PrecomputedDatabasesPanel.Controls.Add(this.UseAllHumanGlycomeDBRadio);
             this.PrecomputedDatabasesPanel.Controls.Add(this.PrecomputedDatabasesHeaderLabel);
-            this.PrecomputedDatabasesPanel.Location = new System.Drawing.Point(776, 6);
+            this.PrecomputedDatabasesPanel.Location = new System.Drawing.Point(867, 6);
             this.PrecomputedDatabasesPanel.Name = "PrecomputedDatabasesPanel";
             this.PrecomputedDatabasesPanel.Size = new System.Drawing.Size(350, 397);
             this.PrecomputedDatabasesPanel.TabIndex = 60;
@@ -295,7 +295,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(800, 410);
+            this.label6.Location = new System.Drawing.Point(855, 410);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 13);
             this.label6.TabIndex = 59;
@@ -315,7 +315,7 @@
             this.comboBox2.DropDownHeight = 180;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.IntegralHeight = false;
-            this.comboBox2.Location = new System.Drawing.Point(897, 407);
+            this.comboBox2.Location = new System.Drawing.Point(952, 407);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(82, 21);
             this.comboBox2.TabIndex = 1;
@@ -332,7 +332,7 @@
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(985, 405);
+            this.button12.Location = new System.Drawing.Point(1040, 405);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(38, 23);
             this.button12.TabIndex = 56;
@@ -586,7 +586,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(8, 6);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(762, 397);
+            this.dataGridView1.Size = new System.Drawing.Size(853, 397);
             this.dataGridView1.TabIndex = 38;
             // 
             // tabPage2
@@ -946,7 +946,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 651);
+            this.ClientSize = new System.Drawing.Size(1294, 651);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;

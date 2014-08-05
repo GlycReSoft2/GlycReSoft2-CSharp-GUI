@@ -179,6 +179,19 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="M:GlycReSoft.composition.comphypo.Clone">
+            <summary>
+            Create a deep copy of the comphypo object.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GlycReSoft.composition.comphypo.CloneList(System.Collections.Generic.List{GlycReSoft.composition.comphypo})">
+            <summary>
+            Create a deep copy of a list of comphypo objects.
+            </summary>
+            <param name="hypothesis"></param>
+            <returns></returns>
+        </member>
         <member name="F:GlycReSoft.Features.components">
             <summary>
             Required designer variable.
