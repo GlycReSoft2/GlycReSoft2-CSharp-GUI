@@ -25,7 +25,7 @@ namespace GlycReSoft
             //Each data file is treated separately, hence the for loop.
             foreach (String filename in FileLinks.FileNames)
             {
-                //Get the parameters.
+                //Get the Parameters.
                 parameters parameter = new parameters();
                 parameters.para paradata = parameter.getParameters();
 
@@ -64,7 +64,7 @@ namespace GlycReSoft
             //Each data file is treated separately, hence the for loop.
             foreach (String filename in FileLinks.FileNames)
             {
-                //Get the parameters.
+                //Get the Parameters.
                 parameters parameter = new parameters();
                 parameters.para paradata = parameter.getParameters();
 
@@ -110,7 +110,7 @@ namespace GlycReSoft
             //Each data file is treated separately, hence the for loop.
             foreach (String filename in FileLinks.FileNames)
             {
-                //Get the parameters.
+                //Get the Parameters.
                 parameters parameter = new parameters();
                 parameters.para paradata = parameter.getParameters();
 
@@ -128,7 +128,7 @@ namespace GlycReSoft
                 }
 
                 //##############Logistic Regression####################
-                //Perform logistic regression to get the parameters
+                //Perform logistic regression to get the Parameters
                 Feature featureData = new Feature();
                 featureData = logisRegression(LRLR);
                 Ini.Add(featureData.Initial);
@@ -568,7 +568,7 @@ namespace GlycReSoft
                 return fea;
             }
 
-            //Perform logistic regression to get the parameters
+            //Perform logistic regression to get the Parameters
             LogisticRegression regression = new LogisticRegression(inputs: 8);
             var results = new IterativeReweightedLeastSquares(regression);
             double delta = 0;

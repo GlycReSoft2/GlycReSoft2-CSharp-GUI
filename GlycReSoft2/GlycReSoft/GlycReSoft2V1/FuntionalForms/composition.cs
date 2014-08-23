@@ -11,6 +11,7 @@ using MathParserTK;
 using System.Text.RegularExpressions;
 using System.Linq;
 using System.Resources;
+using GlycReSoft.CompositionHypothesis;
 
 namespace GlycReSoft
 {
@@ -246,7 +247,7 @@ namespace GlycReSoft
 
         private void button16_Click(object sender, EventArgs e)
         {
-            oFDPPMSD.Filter = "tab delimited file (*.txt)|*.txt";
+            oFDPPMSD.Filter = "tab delimited file (*.txt)|*.txt|XML file (*.xml)|*.xml";
             oFDPPMSD.ShowDialog();
         }
         private void oFDPPMSD_FileOk(object sender, CancelEventArgs e)
@@ -717,7 +718,7 @@ namespace GlycReSoft
                     }
                     String Line = readcompo.ReadLine();
                     String[] eachentry = Line.Split(',');
-                    //When next line is the modification line, it breaks.
+                    //When next line is the Modification line, it breaks.
                     if (eachentry[0] == "Modification%^&!@#*()iop")
                         break;
                     compTable.Letter = eachentry[0];
@@ -996,8 +997,22 @@ namespace GlycReSoft
             {
                 data = readtablim(currentpath);
             }
-            //This is XML File
-            //empty for now
+            //This is XML File implemented by JK
+            else if (extension == ".xml")
+            {
+                MSDigestReport report = MSDigestReport.Load(currentpath);
+                Console.WriteLine(report.Peptides.Count);
+                foreach (MSDigestPeptide pep in report.Peptides)
+                {
+                    //Console.WriteLine(pep.Sequence);
+                }
+                data = report.Peptides.ConvertAll(x => new PPMSD(x));
+            }
+            Console.WriteLine(data.Count);
+            foreach (PPMSD x in data)
+            {
+                Console.WriteLine(x);
+            }        
             periodicTable pt = new periodicTable();
             richTextBox6.Text = getSequence(data);
             foreach (PPMSD pp in data)
@@ -1234,9 +1249,9 @@ namespace GlycReSoft
                                 //if (temp2.elementAmount[indexH] < 0)
                                 //    temp2.elementAmount[indexH] = 0;
 
-                                /* These fields are not present in the database-generated hypothesis,
+                                /* These fields are not present in the Database-generated hypothesis,
                                  * but they are not appropriately error-checked when computed earlier.
-                                 * This bandaid should let existing files work while letting database-
+                                 * This bandaid should let existing files work while letting Database-
                                  * generated ones through as well. This function is very difficult to 
                                  * trace in and would benefit from rewriting in the future.
                                  */
@@ -1255,7 +1270,7 @@ namespace GlycReSoft
                                 //    temp2.elementAmount[indexO] = 0;
                                 //}
                                 #endregion
-                                //Hard coded removal of extra water from neutral charge glycan. 
+                                //Hard coded removal of extra water from neutral Charge glycan. 
                                 temp2.MW = temp2.MW + Temp[k].MW - PT.getMass("H") * 2 - PT.getMass("O");
                                 Temp2.Add(temp2);
                             }
@@ -2021,7 +2036,7 @@ namespace GlycReSoft
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lower bound and Upper bound in the modification list must be integers. Error:" + ex);
+                MessageBox.Show("Lower bound and Upper bound in the Modification list must be integers. Error:" + ex);
                 this.Close();
             }
             adductcomp adc = getAdductCompo(GD);
@@ -2791,20 +2806,49 @@ namespace GlycReSoft
             public List<int> elementAmount;
         }
 
-        public class PPMSD
+        public class PPMSD : GlycReSoft.CompositionHypothesis.MSDigestPeptide
         {
-            public Boolean selected;
-            public Int32 number;
-            public Double Mass;
-            public Int32 Charge;
-            public String Modifications;
-            public Int32 StartAA;
-            public Int32 EndAA;
-            public Int32 MissedCleavages;
-            public String PreviousAA;
-            public String Sequence;
-            public String NextAA;
-            public Int32 numGly;
+            //public Boolean selected;
+            //public Int32 number;
+            //public Double Mass;
+            //public Int32 Charge;
+            //public String Modifications;
+            //public Int32 StartAA;
+            //public Int32 EndAA;
+            //public Int32 MissedCleavages;
+            //public String PreviousAA;
+            //public String Sequence;
+            //public String NextAA;
+            //public Int32 numGly;
+
+            public PPMSD()
+                : base()
+            {
+
+            }
+
+            public PPMSD(MSDigestPeptide other)
+                : base()
+            {
+                this.selected = other.selected;
+                this.number = other.number;
+                this.Mass = other.Mass;
+                this.Charge = other.Charge;
+                this.Modifications = other.Modifications;
+                this.StartAA = other.StartAA;
+                this.EndAA = other.EndAA;
+                this.MissedCleavages = other.MissedCleavages;
+                this.PreviousAA = other.PreviousAA;
+                this.Sequence = other.Sequence;
+                this.NextAA = other.NextAA;
+                this.numGly = other.numGly;
+            }
+
+
+            public override string ToString()
+            {
+                return "PPMSD:" + base.ToString();
+            }
         }
 
         class BackgroundHypothesisFromDBArgument
@@ -2850,7 +2894,7 @@ namespace GlycReSoft
             }
             else
             {
-                MessageBox.Show("You must have selected a precomputed database from the radio option list above.", "Select a database");
+                MessageBox.Show("You must have selected a precomputed Database from the radio option list above.", "Select a Database");
                 return;
             }
             List<comphypo> compHypothesis = getCompHypoFromStream(database.ToStream());
@@ -2865,7 +2909,7 @@ namespace GlycReSoft
             Console.WriteLine(compHypothesis.Count());
             
             ///Check if the UI indicates there should be adducts. If so, apply
-            ///the adduct modification transformation over the range given by the bounds.
+            ///the adduct Modification transformation over the range given by the bounds.
             ///Otherwise generate the hypothesis from the resource stream unmodified.
             bool hasAdduct = true;
             generatorData GD = new generatorData();
@@ -2956,7 +3000,7 @@ namespace GlycReSoft
                 string addrepStr = x.AdductModFormula + "/" + x.AdductReplaceFormula;
                 double adductMassDelta = x.GD.AdductMassDelta();
                 List<comphypo> modifiedHypothesis = new List<comphypo>();
-                for (int c = x.AdductLowerBound; c < x.AdductUpperBound; c++)
+                for (int c = x.AdductLowerBound; c <= x.AdductUpperBound; c++)
                 {
                     List<comphypo> unmodifiedCopy = comphypo.CloneList(x.Hypothesis);
                     foreach (comphypo row in unmodifiedCopy)
@@ -2976,6 +3020,8 @@ namespace GlycReSoft
 
             //tabControl1.SelectedTab = tabPage2;
         }
+
+
 
     }
 }

@@ -49,7 +49,7 @@ namespace GlycReSoft
                         Row.interference_sore = Convert.ToDouble(column[13]);
                     else
                         Row.interference_sore = 0;
-                    //Check if the data are within the boundaries of the parameters
+                    //Check if the data are within the boundaries of the Parameters
                     if (Row.abundance >= paradata.dataNoiseTheshold)
                     {
                         if (Row.monoisotopic_mw <= paradata.molecularWeightUpperBound)

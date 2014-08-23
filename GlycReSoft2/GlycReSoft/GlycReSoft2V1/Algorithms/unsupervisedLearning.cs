@@ -22,7 +22,7 @@ namespace GlycReSoft
             //Each data file is treated separately, hence the for loop.
             foreach (String filename in FileLinks.FileNames)
             {
-                //Get the parameters.
+                //Get the Parameters.
                 parameters parameter = new parameters();
                 parameters.para paradata = parameter.getParameters();
 
@@ -69,7 +69,7 @@ namespace GlycReSoft
             //Each data file is treated separately, hence the for loop.
             foreach (String filename in FileLinks.FileNames)
             {
-                //Get the parameters.
+                //Get the Parameters.
                 parameters parameter = new parameters();
                 parameters.para paradata = parameter.getParameters();
 

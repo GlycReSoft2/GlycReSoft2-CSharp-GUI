@@ -212,9 +212,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(8, 233);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(217, 26);
+            this.label7.Size = new System.Drawing.Size(218, 26);
             this.label7.TabIndex = 7;
-            this.label7.Text = "You can still include a modification as normal\r\nusing the menu below.";
+            this.label7.Text = "You can still include a Modification as normal\r\nusing the menu below.";
             // 
             // UseOLinkedMammalianGlycomeDBRadio
             // 
@@ -290,7 +290,7 @@
             this.PrecomputedDatabasesHeaderLabel.Name = "PrecomputedDatabasesHeaderLabel";
             this.PrecomputedDatabasesHeaderLabel.Size = new System.Drawing.Size(243, 40);
             this.PrecomputedDatabasesHeaderLabel.TabIndex = 0;
-            this.PrecomputedDatabasesHeaderLabel.Text = "Alternatively, use a precomputed \r\ndatabase from GlycomeDB";
+            this.PrecomputedDatabasesHeaderLabel.Text = "Alternatively, use a precomputed \r\nDatabase from GlycomeDB";
             // 
             // label6
             // 

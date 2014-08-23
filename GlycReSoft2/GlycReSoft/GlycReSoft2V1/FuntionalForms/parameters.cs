@@ -19,7 +19,7 @@ namespace GlycReSoft
         **/
         public parameters()
         {
-            //First, read the parameters from file.
+            //First, read the Parameters from file.
             String ParaPath = Application.StartupPath + "\\Parameters.para";
             FileStream FS = new FileStream(ParaPath, FileMode.Open, FileAccess.Read);
             StreamReader ReadPara = new StreamReader(FS);
@@ -81,7 +81,7 @@ namespace GlycReSoft
 
         public void applypara()
         {
-            //First, read the 2 parameters NOT on the parameters form.
+            //First, read the 2 Parameters NOT on the Parameters form.
             String[] Param = new String[8];
             Param[0] = numericUpDown2.Text;
             Param[1] = numericUpDown1.Text;
@@ -91,7 +91,7 @@ namespace GlycReSoft
             Param[5] = numericUpDown6.Text;
             Param[6] = numericUpDown7.Text;
             Param[7] = numericUpDown8.Text;
-            //Next, write them to the parameters.para file.
+            //Next, write them to the Parameters.para file.
             String ParaPath = Application.StartupPath + "\\Parameters.para";
             FileStream FS2 = new FileStream(ParaPath, FileMode.Create, FileAccess.Write);
             StreamWriter WritePara = new StreamWriter(FS2);
@@ -147,7 +147,7 @@ namespace GlycReSoft
         }
         private void oFDPara_FileOk(object sender, CancelEventArgs e)
         {
-            //First, read the parameters from file.
+            //First, read the Parameters from file.
             String ParaPath = oFDPara.FileName;
             FileStream FS = new FileStream(ParaPath, FileMode.Open, FileAccess.Read);
             StreamReader ReadPara = new StreamReader(FS);

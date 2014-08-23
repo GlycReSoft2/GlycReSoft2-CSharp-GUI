@@ -38,7 +38,10 @@ namespace GlycReSoft
                     //Reset Compositions to default:
                     try
                     {
+                        DefaultOptionFileChecker.CheckAllFiles();                    
                         String defaultpath = Application.StartupPath + "\\compositionsDefault.cpos";
+                        Console.WriteLine(defaultpath);
+                        Console.WriteLine(File.Exists(defaultpath));
                         String currentpath = Application.StartupPath + "\\compositionsCurrent.cpos";
                         File.Copy(defaultpath, currentpath, true);
                     }
@@ -49,7 +52,7 @@ namespace GlycReSoft
                     System.Threading.Thread.Sleep(2000);
                     th.Abort();
                     //Run the Program.
-                    Form1 mainForm = new Form1();
+                    HomeScreen mainForm = new HomeScreen();
                     Application.Run(mainForm);
                 }
                 else
@@ -83,6 +86,74 @@ namespace GlycReSoft
             }
         }
 
+
+        public static class DefaultOptionFileChecker
+        {
+            public static bool CheckComposition()
+            {
+                String defaultpath = Path.Combine(Application.StartupPath, "compositionsDefault.cpos");
+                Console.WriteLine(defaultpath);
+                if (!File.Exists(defaultpath) || File.ReadAllText(defaultpath) == "")
+                {
+                    StreamWriter writer = new StreamWriter(new FileStream(defaultpath, FileMode.OpenOrCreate, FileAccess.Write));
+                    writer.Write(Properties.Resources.DefaultComposition);
+                    writer.Close();
+                    File.Copy(defaultpath, Path.Combine(Application.StartupPath, "compositionsCurrent.cpos"));
+                }
+                return File.Exists(defaultpath);
+            }
+            public static bool CheckParameters()
+            {
+                String defaultpath = Path.Combine(Application.StartupPath, "parametersDefault.para");
+                Console.WriteLine(defaultpath);
+                if (!File.Exists(defaultpath) || File.ReadAllText(defaultpath) == "")
+                {
+                    StreamWriter writer = new StreamWriter(new FileStream(defaultpath, FileMode.OpenOrCreate, FileAccess.Write));
+                    writer.Write(Properties.Resources.DefaultParameters);
+                    writer.Close();
+                    File.Copy(defaultpath, Path.Combine(Application.StartupPath, "Parameters.para"));
+                }
+                return File.Exists(defaultpath);
+            }
+
+            public static  bool CheckFeatures()
+            {
+                String defaultpath = Path.Combine(Application.StartupPath, "FeatureDefault.fea");
+                Console.WriteLine(defaultpath);
+                if (!File.Exists(defaultpath) || File.ReadAllText(defaultpath) == "")
+                {
+                    StreamWriter writer = new StreamWriter(new FileStream(defaultpath, FileMode.OpenOrCreate, FileAccess.Write));
+                    writer.Write(Properties.Resources.DefaultFeatures);
+                    writer.Close();
+                    File.Copy(defaultpath, Path.Combine(Application.StartupPath, "FeatureCurrent.fea"));
+                }
+
+                return File.Exists(defaultpath);
+            }
+
+            public static bool CheckAllFiles()
+            {
+                bool  features = CheckFeatures(), 
+                    parameters = CheckParameters(), 
+                    compos = CheckComposition();
+                    
+                if(!features){
+                    Console.WriteLine("Features Files not Found");
+                }
+                if(!parameters){
+                    Console.WriteLine("Parameters Files not Found");
+                }
+                if (!compos)
+                {
+                    Console.WriteLine("Composition Files not Found");
+                }
+
+                return features && 
+                    parameters && 
+                    compos;
+            }
+
+        }
 
         //This is the "please wait" message box.
         public class ShowPleaseWait

@@ -61,6 +61,52 @@ namespace GlycReSoft.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Letter,Molecule,C,H,N,O,S,P,Lower Bound,Upper Bound
+        ///A,G:Pentose,5,8,0,4,0,0,0,0
+        ///B,G:dHex,6,10,0,4,0,0,0,0
+        ///C,G:ΔHexA,6,6,0,5,0,0,0,0
+        ///D,G:HexN,6,11,1,4,0,0,0,0
+        ///E,G:Hexose,6,10,0,5,0,0,0,0
+        ///F,G:HexA,6,8,0,6,0,0,0,0
+        ///G,G:HexNAc,8,13,1,5,0,0,0,0
+        ///H,G:NeuAc,11,17,1,8,0,0,0,0
+        ///I,G:NeuGc,11,17,1,9,0,0,0,0
+        ///J,G:Qui4FM,7,11,1,4,0,0,0,0
+        ///K,G:GalNAcAn,8,12,2,5,0,0,0,0
+        ///L,G:QuiNAC,8,13,1,4,0,0,0,0
+        ///M,G:Kdo,8,12,0,7,0,0,0,0
+        ///N,Ac,2,2,0,1,0,0,0,0
+        ///O,Phosphate,0,1,0,3,0,1,0,0
+        ///P,SO3,0,0,0,3,1,0,0,0
+        ///Q,Water,0,2,0,1,0, [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string DefaultComposition {
+            get {
+                return ResourceManager.GetString("DefaultComposition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -3.69288417,0.65784006,1.345376317,0.219899787,0.0000383503,-0.000349839,-0.001610525,-0.000947516,0.011453828
+        ///.
+        /// </summary>
+        public static string DefaultFeatures {
+            get {
+                return ResourceManager.GetString("DefaultFeatures", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.0,0,10.0,500,6000,80,5.0,1
+        ///.
+        /// </summary>
+        public static string DefaultParameters {
+            get {
+                return ResourceManager.GetString("DefaultParameters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Molecular Weight,C,Compositions,GalNAcS,GalP,GalS,NeuGc,Hex,Pen,Fuc,Neu,HexNAc,NeuAcAc,ManP,Kdn,HexN,HexA,GlcNAcS,Xxx,GlcAS,GalNAcS2,Rha,Xyl,NeuAc,Water,Adduct/Replacement,Adduct Amount,Peptide Sequence,Peptide Modification,Peptide Missed Cleavage Number,Number of Glycan Attachment to Peptide,Start AA,End AA
         ///2882.0466697887005,0,[0;0;0;0;8;0;1;0;7;0;0;0;0;0;0;0;0;0;0;0;0],0,0,0,0,8,0,1,0,7,0,0,0,0,0,0,0,0,0,0,0,0,1,/0,0,,,0,0,0,0
         ///1543.5090740986998,0,[1;0;0;0;3;0;1;0;3;0;0;0;0;0;0;0;0;0;0;0;0],1,0,0,0,3,0 [rest of string was truncated]&quot;;.

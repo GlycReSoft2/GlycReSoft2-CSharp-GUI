@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlycReSoft", "GlycReSoft\GlycReSoft.csproj", "{19E48B93-FA33-423B-B4AF-EC30B611C189}"
+	ProjectSection(ProjectDependencies) = postProject
+		{343AC919-E300-4D8D-AEF2-5777AFBC591A} = {343AC919-E300-4D8D-AEF2-5777AFBC591A}
+		{F082213C-F8BF-4AE2-A79E-E60E3027FA54} = {F082213C-F8BF-4AE2-A79E-E60E3027FA54}
+		{77808B4F-DEE5-4213-BA06-C27B5B29B748} = {77808B4F-DEE5-4213-BA06-C27B5B29B748}
+		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7} = {05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{39952DA0-79DF-4E19-928D-4FBE3ACBE646}"
 	ProjectSection(SolutionItems) = preProject
@@ -11,6 +17,28 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{39952D
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installer", "Installer\Installer.vdproj", "{84209D28-41C5-4E52-BBB3-0238A00509AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TandemGlycopeptidePipeline", "GlycReSoftTandemGlycopeptidePipeline\TandemGlycoPeptidePipeline\TandemGlycopeptidePipeline.csproj", "{77808B4F-DEE5-4213-BA06-C27B5B29B748}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TandemMSGlycopeptideGUI", "GlycReSoftTandemGlycopeptidePipeline\GUIDriver\TandemMSGlycopeptideGUI.csproj", "{F082213C-F8BF-4AE2-A79E-E60E3027FA54}"
+	ProjectSection(ProjectDependencies) = postProject
+		{343AC919-E300-4D8D-AEF2-5777AFBC591A} = {343AC919-E300-4D8D-AEF2-5777AFBC591A}
+		{6EC79573-C90B-4B48-B28B-CF67995A63AD} = {6EC79573-C90B-4B48-B28B-CF67995A63AD}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TandemGlycopeptide", "TandemGlycopeptide", "{B9EFB248-7684-45AE-84B0-AEF184F14AB9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CompositionHypothesis", "CompositionHypothesis", "{209CECE1-8165-40F1-A9C9-6FDE50ABE254}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompositionHypothesis", "CompositionHypothesis\CompositionHypothesis.csproj", "{6EC79573-C90B-4B48-B28B-CF67995A63AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlycReSoftMS2GlycopeptideResultsBrowser", "GlycReSoftTandemGlycopeptidePipeline\GlycReSoftMS2GlycopeptideResultsBrowser\GlycReSoftMS2GlycopeptideResultsBrowser.csproj", "{343AC919-E300-4D8D-AEF2-5777AFBC591A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Generics", "Generics", "{82A965AB-F471-4166-99A6-9608DEE3DE58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericForms", "GenericForms.cs\GenericForms.csproj", "{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,17 +53,92 @@ Global
 		{19E48B93-FA33-423B-B4AF-EC30B611C189}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{19E48B93-FA33-423B-B4AF-EC30B611C189}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{19E48B93-FA33-423B-B4AF-EC30B611C189}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{19E48B93-FA33-423B-B4AF-EC30B611C189}.Debug|x86.ActiveCfg = Debug|x86
-		{19E48B93-FA33-423B-B4AF-EC30B611C189}.Debug|x86.Build.0 = Debug|x86
+		{19E48B93-FA33-423B-B4AF-EC30B611C189}.Debug|x86.ActiveCfg = Release|x86
+		{19E48B93-FA33-423B-B4AF-EC30B611C189}.Debug|x86.Build.0 = Release|x86
 		{19E48B93-FA33-423B-B4AF-EC30B611C189}.Release|Any CPU.ActiveCfg = Release|x86
 		{19E48B93-FA33-423B-B4AF-EC30B611C189}.Release|Mixed Platforms.ActiveCfg = Release|x86
 		{19E48B93-FA33-423B-B4AF-EC30B611C189}.Release|Mixed Platforms.Build.0 = Release|x86
 		{19E48B93-FA33-423B-B4AF-EC30B611C189}.Release|x86.ActiveCfg = Release|x86
 		{19E48B93-FA33-423B-B4AF-EC30B611C189}.Release|x86.Build.0 = Release|x86
 		{19E48B93-FA33-423B-B4AF-EC30B611C189}.Release|x86.Deploy.0 = Release|x86
+		{84209D28-41C5-4E52-BBB3-0238A00509AC}.Debug|Any CPU.ActiveCfg = Debug
+		{84209D28-41C5-4E52-BBB3-0238A00509AC}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{84209D28-41C5-4E52-BBB3-0238A00509AC}.Debug|x86.ActiveCfg = Release
+		{84209D28-41C5-4E52-BBB3-0238A00509AC}.Debug|x86.Build.0 = Release
+		{84209D28-41C5-4E52-BBB3-0238A00509AC}.Release|Any CPU.ActiveCfg = Release
+		{84209D28-41C5-4E52-BBB3-0238A00509AC}.Release|Mixed Platforms.ActiveCfg = Release
+		{84209D28-41C5-4E52-BBB3-0238A00509AC}.Release|x86.ActiveCfg = Release
+		{84209D28-41C5-4E52-BBB3-0238A00509AC}.Release|x86.Build.0 = Release
+		{77808B4F-DEE5-4213-BA06-C27B5B29B748}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77808B4F-DEE5-4213-BA06-C27B5B29B748}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77808B4F-DEE5-4213-BA06-C27B5B29B748}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{77808B4F-DEE5-4213-BA06-C27B5B29B748}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{77808B4F-DEE5-4213-BA06-C27B5B29B748}.Debug|x86.ActiveCfg = Release|Any CPU
+		{77808B4F-DEE5-4213-BA06-C27B5B29B748}.Debug|x86.Build.0 = Release|Any CPU
+		{77808B4F-DEE5-4213-BA06-C27B5B29B748}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77808B4F-DEE5-4213-BA06-C27B5B29B748}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77808B4F-DEE5-4213-BA06-C27B5B29B748}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{77808B4F-DEE5-4213-BA06-C27B5B29B748}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{77808B4F-DEE5-4213-BA06-C27B5B29B748}.Release|x86.ActiveCfg = Release|Any CPU
+		{77808B4F-DEE5-4213-BA06-C27B5B29B748}.Release|x86.Build.0 = Release|Any CPU
+		{F082213C-F8BF-4AE2-A79E-E60E3027FA54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F082213C-F8BF-4AE2-A79E-E60E3027FA54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F082213C-F8BF-4AE2-A79E-E60E3027FA54}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F082213C-F8BF-4AE2-A79E-E60E3027FA54}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F082213C-F8BF-4AE2-A79E-E60E3027FA54}.Debug|x86.ActiveCfg = Release|Any CPU
+		{F082213C-F8BF-4AE2-A79E-E60E3027FA54}.Debug|x86.Build.0 = Release|Any CPU
+		{F082213C-F8BF-4AE2-A79E-E60E3027FA54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F082213C-F8BF-4AE2-A79E-E60E3027FA54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F082213C-F8BF-4AE2-A79E-E60E3027FA54}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F082213C-F8BF-4AE2-A79E-E60E3027FA54}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F082213C-F8BF-4AE2-A79E-E60E3027FA54}.Release|x86.ActiveCfg = Release|Any CPU
+		{F082213C-F8BF-4AE2-A79E-E60E3027FA54}.Release|x86.Build.0 = Release|Any CPU
+		{6EC79573-C90B-4B48-B28B-CF67995A63AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EC79573-C90B-4B48-B28B-CF67995A63AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EC79573-C90B-4B48-B28B-CF67995A63AD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{6EC79573-C90B-4B48-B28B-CF67995A63AD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{6EC79573-C90B-4B48-B28B-CF67995A63AD}.Debug|x86.ActiveCfg = Release|Any CPU
+		{6EC79573-C90B-4B48-B28B-CF67995A63AD}.Debug|x86.Build.0 = Release|Any CPU
+		{6EC79573-C90B-4B48-B28B-CF67995A63AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EC79573-C90B-4B48-B28B-CF67995A63AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EC79573-C90B-4B48-B28B-CF67995A63AD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{6EC79573-C90B-4B48-B28B-CF67995A63AD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{6EC79573-C90B-4B48-B28B-CF67995A63AD}.Release|x86.ActiveCfg = Release|Any CPU
+		{6EC79573-C90B-4B48-B28B-CF67995A63AD}.Release|x86.Build.0 = Release|Any CPU
+		{343AC919-E300-4D8D-AEF2-5777AFBC591A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{343AC919-E300-4D8D-AEF2-5777AFBC591A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{343AC919-E300-4D8D-AEF2-5777AFBC591A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{343AC919-E300-4D8D-AEF2-5777AFBC591A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{343AC919-E300-4D8D-AEF2-5777AFBC591A}.Debug|x86.ActiveCfg = Release|Any CPU
+		{343AC919-E300-4D8D-AEF2-5777AFBC591A}.Debug|x86.Build.0 = Release|Any CPU
+		{343AC919-E300-4D8D-AEF2-5777AFBC591A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{343AC919-E300-4D8D-AEF2-5777AFBC591A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{343AC919-E300-4D8D-AEF2-5777AFBC591A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{343AC919-E300-4D8D-AEF2-5777AFBC591A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{343AC919-E300-4D8D-AEF2-5777AFBC591A}.Release|x86.ActiveCfg = Release|Any CPU
+		{343AC919-E300-4D8D-AEF2-5777AFBC591A}.Release|x86.Build.0 = Release|Any CPU
+		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}.Debug|x86.ActiveCfg = Release|Any CPU
+		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}.Debug|x86.Build.0 = Release|Any CPU
+		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}.Release|x86.ActiveCfg = Release|Any CPU
+		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{77808B4F-DEE5-4213-BA06-C27B5B29B748} = {B9EFB248-7684-45AE-84B0-AEF184F14AB9}
+		{F082213C-F8BF-4AE2-A79E-E60E3027FA54} = {B9EFB248-7684-45AE-84B0-AEF184F14AB9}
+		{6EC79573-C90B-4B48-B28B-CF67995A63AD} = {209CECE1-8165-40F1-A9C9-6FDE50ABE254}
+		{343AC919-E300-4D8D-AEF2-5777AFBC591A} = {B9EFB248-7684-45AE-84B0-AEF184F14AB9}
+		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7} = {82A965AB-F471-4166-99A6-9608DEE3DE58}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = GlycReSoft\GlycReSoft.csproj

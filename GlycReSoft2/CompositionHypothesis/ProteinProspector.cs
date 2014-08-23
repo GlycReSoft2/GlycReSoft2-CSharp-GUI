@@ -19,6 +19,22 @@ namespace GlycReSoft.CompositionHypothesis
         //public List<MSDigestDatabaseEntry> DatabaseEntries;
         public List<MSDigestPeptide> Peptides;
 
+        public String[] ConstantModifications { 
+            get{
+                String[] results = Parameters.ConstantModifications.ConvertAll(x => x.Name).ToArray();
+                return results;
+            }
+        }
+        public String[] VariableModifications
+        {
+            get
+            {
+                String[] results = Parameters.VariableModifications.ConvertAll(x => x.Name).ToArray();
+                return results;
+            }
+        }
+
+
         public static MSDigestReport Load(String filePath)
         {
             Console.WriteLine(filePath);
@@ -84,6 +100,8 @@ namespace GlycReSoft.CompositionHypothesis
 
 
         }
+
+        
     }
 
     /// <summary>
