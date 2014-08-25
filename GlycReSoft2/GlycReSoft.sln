@@ -26,6 +26,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TandemMSGlycopeptideGUI", "
 	ProjectSection(ProjectDependencies) = postProject
 		{343AC919-E300-4D8D-AEF2-5777AFBC591A} = {343AC919-E300-4D8D-AEF2-5777AFBC591A}
 		{6EC79573-C90B-4B48-B28B-CF67995A63AD} = {6EC79573-C90B-4B48-B28B-CF67995A63AD}
+		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7} = {05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TandemGlycopeptide", "TandemGlycopeptide", "{B9EFB248-7684-45AE-84B0-AEF184F14AB9}"
@@ -38,7 +39,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlycReSoftMS2GlycopeptideRe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Generics", "Generics", "{82A965AB-F471-4166-99A6-9608DEE3DE58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericForms", "GenericForms.cs\GenericForms.csproj", "{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericForms", "GenericForms\GenericForms.csproj", "{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -121,14 +122,12 @@ Global
 		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}.Debug|x86.ActiveCfg = Release|Any CPU
-		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}.Debug|x86.Build.0 = Release|Any CPU
+		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}.Release|x86.ActiveCfg = Release|Any CPU
-		{05BE70CB-9BF5-4C16-BE39-6CD7B4C19DF7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,0 @@
-C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_Devel\GlycReSoft2\CompositionHypothesis\bin\Release\CompositionHypothesis.dll
-C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_Devel\GlycReSoft2\CompositionHypothesis\bin\Release\CompositionHypothesis.pdb
-C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_Devel\GlycReSoft2\CompositionHypothesis\obj\Release\CompositionHypothesis.dll
-C:\Users\jaklein\Dropbox\GlycomicsSandbox\GlycReSoft2_Devel\GlycReSoft2\CompositionHypothesis\obj\Release\CompositionHypothesis.pdb
