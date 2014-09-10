@@ -131,7 +131,7 @@
             // 
             // oFDComposition
             // 
-            this.oFDComposition.FileName = "Open Composition File";
+            this.oFDComposition.FileName = "Open GlycanCompositions File";
             this.oFDComposition.FileOk += new System.ComponentModel.CancelEventHandler(this.oFDComposition_FileOk);
             // 
             // tabControl1
@@ -147,7 +147,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
+            this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.tabPage1.Controls.Add(this.PrecomputedDatabasesPanel);
             this.tabPage1.Controls.Add(this.label6);
@@ -175,8 +175,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1288, 628);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Generate Composition Hypothesis";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Text = "Generate GlycanCompositions Hypothesis";
             // 
             // PrecomputedDatabasesPanel
             // 
@@ -371,10 +370,10 @@
             this.label4.ForeColor = System.Drawing.Color.Red;
             this.label4.Location = new System.Drawing.Point(567, 513);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(441, 13);
+            this.label4.Size = new System.Drawing.Size(479, 13);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Important: Remember to Apply Changes before  you Press Generate Composition Hypot" +
-    "hesis";
+            this.label4.Text = "Important: Remember to Apply Changes before  you Press Generate GlycanComposition" +
+    "s Hypothesis";
             // 
             // pictureBox1
             // 
@@ -393,7 +392,7 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(254, 40);
             this.button8.TabIndex = 52;
-            this.button8.Text = "Generate Composition Hypothesis";
+            this.button8.Text = "Generate GlycanCompositions Hypothesis";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
@@ -601,7 +600,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1288, 628);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "View Composition Hypothesis";
+            this.tabPage2.Text = "View GlycanCompositions Hypothesis";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // pictureBox2
@@ -620,10 +619,10 @@
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(14, 525);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(384, 26);
+            this.label2.Size = new System.Drawing.Size(422, 26);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Warning: Remember to save the Composition Hypothesis file when you\'re done. \r\nAll" +
-    " data will be lost if they are not saved before closing the window.";
+            this.label2.Text = "Warning: Remember to save the GlycanCompositions Hypothesis file when you\'re done" +
+    ". \r\nAll data will be lost if they are not saved before closing the window.";
             // 
             // button6
             // 
@@ -632,7 +631,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(180, 23);
             this.button6.TabIndex = 2;
-            this.button6.Text = "Save Composition Hypothesis";
+            this.button6.Text = "Save GlycanCompositions Hypothesis";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -690,9 +689,9 @@
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(6, 431);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(321, 13);
+            this.label3.Size = new System.Drawing.Size(359, 13);
             this.label3.TabIndex = 29;
-            this.label3.Text = "Load a Composition Hypothesis to combine it with the glycopeptide";
+            this.label3.Text = "Load a GlycanCompositions Hypothesis to combine it with the glycopeptide";
             // 
             // button10
             // 
@@ -700,7 +699,7 @@
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(184, 23);
             this.button10.TabIndex = 28;
-            this.button10.Text = "Load Composition Hypothesis";
+            this.button10.Text = "Load GlycanCompositions Hypothesis";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
@@ -837,7 +836,25 @@
             this.Column12.Items.AddRange(new object[] {
             "0",
             "1",
-            "2"});
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"});
             this.Column12.Name = "Column12";
             this.Column12.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
@@ -951,7 +968,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "composition";
-            this.Text = "Generate Composition Hypothesis";
+            this.Text = "Generate GlycanCompositions Hypothesis";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1020,14 +1037,6 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.OpenFileDialog oFDPPMSD;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn SelectColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column12;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.RichTextBox richTextBox1;
@@ -1056,5 +1065,13 @@
         private System.Windows.Forms.RadioButton UseNLinkedHumanGlycomeDBRadio;
         private System.Windows.Forms.RadioButton UseAllHumanGlycomeDBRadio;
         private System.Windows.Forms.Button GeneratePrecomputedHypothesisButton;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn SelectColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column12;
     }
 }

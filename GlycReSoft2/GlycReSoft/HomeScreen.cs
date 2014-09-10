@@ -127,7 +127,7 @@ namespace GlycReSoft
             }
         }
 
-        //This is the "Load Composition Hypothesis" button
+        //This is the "Load GlycanCompositions Hypothesis" button
         private void button13_Click(object sender, EventArgs e)
         {
             oFDGenerator.Filter = "csv files (*.csv)|*.csv";

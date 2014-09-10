@@ -94,7 +94,7 @@ namespace GlycReSoft
             }
             catch (Exception compoex)
             {
-                MessageBox.Show("Error in loading Composition Table (cpos). Error:" + compoex);
+                MessageBox.Show("Error in loading GlycanCompositions Table (cpos). Error:" + compoex);
             }
 
             DATA.aTable = new List<composition.arTable>();

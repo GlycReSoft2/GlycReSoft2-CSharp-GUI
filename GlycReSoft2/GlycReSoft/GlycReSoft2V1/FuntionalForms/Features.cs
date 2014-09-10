@@ -148,7 +148,7 @@ namespace GlycReSoft
 
 
 
-        //Generate Composition Hypothesis Button
+        //Generate GlycanCompositions Hypothesis Button
         private void button5_Click(object sender, EventArgs e)
         {
             composition opencompo = new composition();
@@ -217,7 +217,7 @@ namespace GlycReSoft
             oFDcposTest.FileName = String.Empty;
         }
 
-        //Load Composition Hypothesis button.
+        //Load GlycanCompositions Hypothesis button.
         private void button6_Click(object sender, EventArgs e)
         {
             oFDCompositionTest.Filter = "csv files (*.csv)|*.csv";

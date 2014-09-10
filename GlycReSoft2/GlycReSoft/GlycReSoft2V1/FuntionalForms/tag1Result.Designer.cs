@@ -282,7 +282,7 @@
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(132, 23);
             this.button15.TabIndex = 141;
-            this.button15.Text = "Add Composition File";
+            this.button15.Text = "Add GlycanCompositions File";
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
@@ -312,7 +312,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(254, 26);
             this.label8.TabIndex = 138;
-            this.label8.Text = "Load Composition File for False Data Set generation \r\n(.cpos file)";
+            this.label8.Text = "Load GlycanCompositions File for False Data Set generation \r\n(.cpos file)";
             // 
             // radioButton2
             // 
@@ -615,7 +615,7 @@
             | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep45) 
             | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep90) 
             | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.WordWrap)));
-            chartArea2.AxisX.Title = "Composition";
+            chartArea2.AxisX.Title = "GlycanCompositions";
             chartArea2.AxisY.Title = "Percent of Total Volume";
             chartArea2.Name = "ChartArea1";
             this.chart2.ChartAreas.Add(chartArea2);

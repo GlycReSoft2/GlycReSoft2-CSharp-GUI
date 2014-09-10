@@ -241,7 +241,7 @@
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(166, 23);
             this.button15.TabIndex = 120;
-            this.button15.Text = "Load Composition File (.cpos)";
+            this.button15.Text = "Load GlycanCompositions File (.cpos)";
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
@@ -281,7 +281,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(302, 13);
             this.label8.TabIndex = 116;
-            this.label8.Text = "Load Composition File for False Data Set generation (.cpos file)";
+            this.label8.Text = "Load GlycanCompositions File for False Data Set generation (.cpos file)";
             // 
             // radioButton2
             // 
@@ -391,7 +391,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(138, 13);
             this.label4.TabIndex = 98;
-            this.label4.Text = "Composition Hypothesis File";
+            this.label4.Text = "GlycanCompositions Hypothesis File";
             // 
             // richTextBox2
             // 
@@ -419,7 +419,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(164, 24);
             this.button6.TabIndex = 95;
-            this.button6.Text = "Load Composition Hypothesis";
+            this.button6.Text = "Load GlycanCompositions Hypothesis";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -481,7 +481,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(138, 13);
             this.label3.TabIndex = 79;
-            this.label3.Text = "Composition Hypothesis File";
+            this.label3.Text = "GlycanCompositions Hypothesis File";
             // 
             // richTextBox1
             // 
@@ -528,7 +528,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(170, 21);
             this.button3.TabIndex = 74;
-            this.button3.Text = "Load Composition Hypothesis";
+            this.button3.Text = "Load GlycanCompositions Hypothesis";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -549,7 +549,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(203, 30);
             this.button5.TabIndex = 72;
-            this.button5.Text = "Generate Composition Hypothesis";
+            this.button5.Text = "Generate GlycanCompositions Hypothesis";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 

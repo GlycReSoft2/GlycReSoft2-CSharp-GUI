@@ -73,7 +73,7 @@ namespace GlycReSoft
             }
             catch (Exception compoex)
             {
-                MessageBox.Show("Error in populating Composition Table. Error:" + compoex);
+                MessageBox.Show("Error in populating GlycanCompositions Table. Error:" + compoex);
             }
         }
 
@@ -219,7 +219,7 @@ namespace GlycReSoft
             saveCompoToFile(currentpath);
         }
 
-        //This is the "Generate Hypothesis" button. Clicking this button will switch to tag2 and display the Composition Hypothesis on the screen.
+        //This is the "Generate Hypothesis" button. Clicking this button will switch to tag2 and display the GlycanCompositions Hypothesis on the screen.
         private void button8_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tabPage2;
@@ -458,7 +458,7 @@ namespace GlycReSoft
             }
             catch (Exception compoex)
             {
-                MessageBox.Show("Error in loading Composition Table. Error:" + compoex);
+                MessageBox.Show("Error in loading GlycanCompositions Table. Error:" + compoex);
             }
             try
             {
@@ -467,7 +467,7 @@ namespace GlycReSoft
             }
             catch (Exception compoex)
             {
-                MessageBox.Show("Error in populating Composition Table. Error:" + compoex);
+                MessageBox.Show("Error in populating GlycanCompositions Table. Error:" + compoex);
             }
         }
 
@@ -762,7 +762,7 @@ namespace GlycReSoft
             }
             catch (Exception compoex)
             {
-                MessageBox.Show("Error in loading Composition Table. Error:" + compoex);
+                MessageBox.Show("Error in loading GlycanCompositions Table. Error:" + compoex);
             }
             return GD;
         }
@@ -785,14 +785,14 @@ namespace GlycReSoft
                 int h = 1;
                 while (headers[h] != "Compositions")
                 {
-                    Console.WriteLine(headers[h]);
+                    //Console.WriteLine(headers[h]);
                     elementIDs.Add(headers[h]);
                     h++;
                 }
                 h++;
                 while (headers[h] != "Adduct/Replacement")
                 {
-                    Console.WriteLine(headers[h]);
+                    //Console.WriteLine(headers[h]);
                     molename.Add(headers[h]);
                     h++;
                 }
@@ -872,9 +872,13 @@ namespace GlycReSoft
                 readcompo.Close();
                 reading.Close();
             }
+            catch (OutOfMemoryException ex)
+            {
+                throw;
+            }
             catch (Exception compoex)
             {
-                MessageBox.Show("Error in loading Composition Hypothesis File. Error:" + compoex);
+                MessageBox.Show("Error in loading GlycanCompositions Hypothesis File. Error:" + compoex);
             }
             return compotable;
         }
@@ -1002,10 +1006,6 @@ namespace GlycReSoft
             {
                 MSDigestReport report = MSDigestReport.Load(currentpath);
                 Console.WriteLine(report.Peptides.Count);
-                foreach (MSDigestPeptide pep in report.Peptides)
-                {
-                    //Console.WriteLine(pep.Sequence);
-                }
                 data = report.Peptides.ConvertAll(x => new PPMSD(x));
             }
             Console.WriteLine(data.Count);
@@ -1098,24 +1098,48 @@ namespace GlycReSoft
             BackgroundWorker bw = new BackgroundWorker();
             bw.DoWork += new DoWorkEventHandler(bw_DoWork2);
             bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompleted2);
-
+            bool success = true;
             //set lable and your waiting text in this form
             try
             {
                 bw.RunWorkerAsync();//this will run the DoWork code at background thread
                 msgForm.ShowDialog();//show the please wait box
             }
+            catch (OutOfMemoryException ex)
+            {
+                MessageBox.Show("Your glycopeptide composition hypothesis generated more results than we can store in memory. Try using a smaller glycome or proteome to resolve this problem.", "Composition Hypothesis Combinatorics Exceeded Memory Size");
+                success = false;
+
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+                success = false;
             }
 
-            dataGridView2.DataSource = theComhypoOnTab2;
-            button6.Enabled = true;
+            if (success)
+            {
+                dataGridView2.DataSource = theComhypoOnTab2;
+                button6.Enabled = true;
+            }
+            else
+            {
+                msgForm.Close();
+            }
+
         }
         void bw_DoWork2(object sender, DoWorkEventArgs e)
         {
-            stuffToDo2(comhypopathStore);
+            try
+            {
+                stuffToDo2(comhypopathStore);
+            }
+            catch(OutOfMemoryException ex)
+            {
+                MessageBox.Show("Your glycopeptide composition hypothesis generated more results than we can store in memory. Try using a smaller glycome or proteome to resolve this problem.", "Composition Hypothesis Combinatorics Exceeded Memory Size");
+                
+            }
+            
         }
         void bw_RunWorkerCompleted2(object sender, RunWorkerCompletedEventArgs e)
         {
@@ -1167,6 +1191,7 @@ namespace GlycReSoft
                 MessageBox.Show("Your composition hypothesis contains a compound without Water. Job terminated.");
                 return;
             }
+
             List<PPMSD> PP = obtainPP();
             List<comphypo> Ans = new List<comphypo>();
             //Ans.AddRange(CHy);
@@ -1363,7 +1388,7 @@ namespace GlycReSoft
 
 
         //#################################################generateHypo class is big and it deserves a block######################################
-        //This function generates the Composition Hypothesis and print it on dataGridView2.
+        //This function generates the GlycanCompositions Hypothesis and print it on dataGridView2.
         PleaseWait msgForm = new PleaseWait();
         private void generateHypo()
         {
@@ -1487,7 +1512,7 @@ namespace GlycReSoft
             hypo.Columns.Add("Compositions", typeof(String));
             for (int i = 0; i < UltFinalAns[0].eqCounts.Count(); i++)
             {
-                Console.WriteLine(i);
+                //Console.WriteLine(i);
                 hypo.Columns.Add(molname[i], typeof(Int32));
             }
 
@@ -1719,7 +1744,7 @@ namespace GlycReSoft
                 foreach (String k in j.Bound)
                 {
                     Int32 boundNumber = Convert.ToInt32(k);
-                    //Append this molecule to the other compositions.
+                    //Append this molecule to the other previousCompositions.
                     if (Ans.Count != 0)
                     {
                         for (int l = 0; l < Ans.Count; l++)
@@ -2615,7 +2640,7 @@ namespace GlycReSoft
             }
             public String Letter;
             public String Molecule;
-            //element ID and amount are used to record the element compositions.
+            //element ID and amount are used to record the element previousCompositions.
             public List<string> elementIDs;
             public List<int> elementAmount;
             public List<String> Bound;
@@ -2700,7 +2725,7 @@ namespace GlycReSoft
                 StartAA = 0;
                 EndAA = 0;
             }
-            //element ID and amount are used to record the element compositions.
+            //element ID and amount are used to record the element previousCompositions.
             public List<string> elementIDs;
             public List<int> elementAmount;
             public String compoundCompo;
@@ -2906,7 +2931,7 @@ namespace GlycReSoft
             //{
             //    Console.WriteLine(c);
             //}
-            Console.WriteLine(compHypothesis.Count());
+            //Console.WriteLine(compHypothesis.Count());
             
             ///Check if the UI indicates there should be adducts. If so, apply
             ///the adduct Modification transformation over the range given by the bounds.

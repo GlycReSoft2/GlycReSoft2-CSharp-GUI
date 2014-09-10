@@ -145,7 +145,7 @@ namespace GlycReSoft
                 }
                 if (!compos)
                 {
-                    Console.WriteLine("Composition Files not Found");
+                    Console.WriteLine("GlycanCompositions Files not Found");
                 }
 
                 return features && 

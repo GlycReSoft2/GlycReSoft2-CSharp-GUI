@@ -177,7 +177,7 @@ namespace GlycReSoft
                     }
                     molenamecount = molenames.Count();
 
-                    write.WriteLine(",Adduct/Replacement,Adduct Amount,PeptideModification,PeptideMissedCleavage#,#ofGlycanAttachmentToPeptide,StarAA,EndAA");
+                    write.WriteLine(",Adduct/Replacement,Adduct Amount,PeptideModification,PeptideMissedCleavage#,#ofGlycanAttachmentToPeptide,StartAA,EndAA");
                     parameters pr = new parameters();
                     parameters.para paradata = pr.getParameters();
 
@@ -1126,11 +1126,11 @@ namespace GlycReSoft
                     dataset = dataset.OrderByDescending(a => a.comphypo.compoundCompo).ToList();
                     if (molenames.Count() == 0)
                     {
-                        titleName = "Composition: N/A";
+                        titleName = "GlycanCompositions: N/A";
                     }
                     else
                     {
-                        titleName = "Composition: ";
+                        titleName = "GlycanCompositions: ";
                         titleName = titleName + String.Join(", ", molenames);
                     }
                     chart2.Series.Add(DeconData.FileNames[comboBox3.SelectedIndex]);

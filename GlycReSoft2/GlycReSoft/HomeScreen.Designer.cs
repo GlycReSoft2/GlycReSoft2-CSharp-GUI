@@ -32,6 +32,7 @@
             this.control1 = new System.Windows.Forms.Control();
             this.oFDDeconData = new System.Windows.Forms.OpenFileDialog();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.AnalyzeTandemMSGlycopeptideLaunchButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -54,7 +55,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.oFDGenerator = new System.Windows.Forms.OpenFileDialog();
-            this.AnalyzeTandemMSGlycopeptideLaunchButton = new System.Windows.Forms.Button();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -75,7 +75,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
+            this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage1.Controls.Add(this.AnalyzeTandemMSGlycopeptideLaunchButton);
             this.tabPage1.Controls.Add(this.pictureBox1);
@@ -104,22 +104,32 @@
             this.tabPage1.Size = new System.Drawing.Size(984, 708);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Home";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // AnalyzeTandemMSGlycopeptideLaunchButton
+            // 
+            this.AnalyzeTandemMSGlycopeptideLaunchButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AnalyzeTandemMSGlycopeptideLaunchButton.Location = new System.Drawing.Point(27, 455);
+            this.AnalyzeTandemMSGlycopeptideLaunchButton.Name = "AnalyzeTandemMSGlycopeptideLaunchButton";
+            this.AnalyzeTandemMSGlycopeptideLaunchButton.Size = new System.Drawing.Size(283, 50);
+            this.AnalyzeTandemMSGlycopeptideLaunchButton.TabIndex = 64;
+            this.AnalyzeTandemMSGlycopeptideLaunchButton.Text = "Analyze Tandem MS Glycopeptide Data";
+            this.AnalyzeTandemMSGlycopeptideLaunchButton.UseVisualStyleBackColor = true;
+            this.AnalyzeTandemMSGlycopeptideLaunchButton.Click += new System.EventHandler(this.AnalyzeTandemMSGlycopeptideLaunchButton_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(513, 562);
+            this.pictureBox1.Location = new System.Drawing.Point(920, 613);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(465, 135);
+            this.pictureBox1.Size = new System.Drawing.Size(57, 62);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 63;
             this.pictureBox1.TabStop = false;
             // 
             // button4
             // 
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(553, 455);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(325, 36);
@@ -130,7 +140,7 @@
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(553, 169);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(324, 36);
@@ -143,16 +153,16 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(549, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 22);
+            this.label2.Size = new System.Drawing.Size(131, 22);
             this.label2.TabIndex = 60;
             this.label2.Text = "Miscellaneous:";
             // 
             // button10
             // 
-            this.button10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.Location = new System.Drawing.Point(553, 127);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(324, 36);
@@ -165,7 +175,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.BackColor = System.Drawing.Color.White;
-            this.label34.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.Location = new System.Drawing.Point(22, 3);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(180, 22);
@@ -175,12 +185,12 @@
             // button13
             // 
             this.button13.Enabled = false;
-            this.button13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button13.Location = new System.Drawing.Point(27, 340);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(283, 47);
             this.button13.TabIndex = 55;
-            this.button13.Text = "Load Composition Hypothesis";
+            this.button13.Text = "Load Compositions Hypothesis";
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
@@ -188,28 +198,29 @@
             // 
             this.label30.AutoSize = true;
             this.label30.BackColor = System.Drawing.Color.White;
-            this.label30.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.Location = new System.Drawing.Point(23, 285);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(322, 34);
+            this.label30.Size = new System.Drawing.Size(311, 34);
             this.label30.TabIndex = 54;
-            this.label30.Text = "To Generate Results with Composition Hypothesis,\r\n use Supervised Learning:";
+            this.label30.Text = "To Generate Results with Compositions Hypothesis,\r\n use Supervised Learning:";
             // 
             // label29
             // 
             this.label29.AutoSize = true;
             this.label29.BackColor = System.Drawing.Color.White;
-            this.label29.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.Location = new System.Drawing.Point(18, 540);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(342, 34);
+            this.label29.Size = new System.Drawing.Size(369, 34);
             this.label29.TabIndex = 53;
-            this.label29.Text = "To Generate Output Without Composition Hypothesis,\r\n use Unsupervised Learning";
+            this.label29.Text = "To Generate Output Without GlycanCompositions Hypothesis,\r\n use Unsupervised Lear" +
+    "ning";
             // 
             // button12
             // 
             this.button12.Enabled = false;
-            this.button12.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.Location = new System.Drawing.Point(22, 599);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(296, 47);
@@ -222,16 +233,16 @@
             // 
             this.label28.AutoSize = true;
             this.label28.BackColor = System.Drawing.Color.White;
-            this.label28.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.Location = new System.Drawing.Point(548, 285);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(161, 22);
+            this.label28.Size = new System.Drawing.Size(164, 22);
             this.label28.TabIndex = 51;
             this.label28.Text = "Settings and Tools:";
             // 
             // button11
             // 
-            this.button11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.Location = new System.Drawing.Point(553, 328);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(324, 36);
@@ -251,7 +262,7 @@
             // 
             // button19
             // 
-            this.button19.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button19.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button19.Location = new System.Drawing.Point(553, 370);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(324, 36);
@@ -262,7 +273,7 @@
             // 
             // button7
             // 
-            this.button7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.Location = new System.Drawing.Point(553, 84);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(324, 36);
@@ -273,7 +284,7 @@
             // 
             // button6
             // 
-            this.button6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Location = new System.Drawing.Point(27, 211);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(168, 35);
@@ -284,12 +295,12 @@
             // 
             // button5
             // 
-            this.button5.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(553, 413);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(324, 36);
             this.button5.TabIndex = 13;
-            this.button5.Text = "Generate Composition Hypothesis";
+            this.button5.Text = "Generate Compositions Hypothesis";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -297,17 +308,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(22, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(296, 19);
+            this.label1.Size = new System.Drawing.Size(285, 19);
             this.label1.TabIndex = 7;
             this.label1.Text = "File List of LC/MS Data (DeconTool Results)";
             // 
             // button3
             // 
             this.button3.Enabled = false;
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(27, 395);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(283, 50);
@@ -318,7 +329,7 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(202, 211);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(211, 35);
@@ -340,17 +351,6 @@
             // 
             this.oFDGenerator.FileName = "Open Generator From";
             this.oFDGenerator.FileOk += new System.ComponentModel.CancelEventHandler(this.oFDGenerator_FileOk);
-            // 
-            // AnalyzeTandemMSGlycopeptideLaunchButton
-            // 
-            this.AnalyzeTandemMSGlycopeptideLaunchButton.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AnalyzeTandemMSGlycopeptideLaunchButton.Location = new System.Drawing.Point(27, 455);
-            this.AnalyzeTandemMSGlycopeptideLaunchButton.Name = "AnalyzeTandemMSGlycopeptideLaunchButton";
-            this.AnalyzeTandemMSGlycopeptideLaunchButton.Size = new System.Drawing.Size(283, 50);
-            this.AnalyzeTandemMSGlycopeptideLaunchButton.TabIndex = 64;
-            this.AnalyzeTandemMSGlycopeptideLaunchButton.Text = "Analyze Tandem MS Glycopeptide Data";
-            this.AnalyzeTandemMSGlycopeptideLaunchButton.UseVisualStyleBackColor = true;
-            this.AnalyzeTandemMSGlycopeptideLaunchButton.Click += new System.EventHandler(this.AnalyzeTandemMSGlycopeptideLaunchButton_Click);
             // 
             // HomeScreen
             // 

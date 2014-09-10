@@ -37,7 +37,6 @@ namespace GlycReSoft.CompositionHypothesis
 
         public static MSDigestReport Load(String filePath)
         {
-            Console.WriteLine(filePath);
             XmlDocument xml = new XmlDocument();
             xml.LoadXml(File.ReadAllText(filePath));
             return new MSDigestReport(xml);
@@ -173,7 +172,6 @@ namespace GlycReSoft.CompositionHypothesis
         public static MSDigestModification FromURI(String uriEncodedName)
         {
             var mod = new MSDigestModification(Uri.UnescapeDataString(uriEncodedName));
-            Console.WriteLine(mod);
             return mod;
         }
     }
