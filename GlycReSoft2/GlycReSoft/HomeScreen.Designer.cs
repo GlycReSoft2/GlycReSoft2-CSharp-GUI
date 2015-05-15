@@ -32,6 +32,7 @@
             this.control1 = new System.Windows.Forms.Control();
             this.oFDDeconData = new System.Windows.Forms.OpenFileDialog();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.BUPIDTopDownButton = new System.Windows.Forms.Button();
             this.AnalyzeTandemMSGlycopeptideLaunchButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -77,6 +78,7 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage1.Controls.Add(this.BUPIDTopDownButton);
             this.tabPage1.Controls.Add(this.AnalyzeTandemMSGlycopeptideLaunchButton);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.button4);
@@ -105,15 +107,30 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Home";
             // 
+            // BUPIDTopDownButton
+            // 
+            this.BUPIDTopDownButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BUPIDTopDownButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BUPIDTopDownButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BUPIDTopDownButton.Location = new System.Drawing.Point(471, 167);
+            this.BUPIDTopDownButton.Name = "BUPIDTopDownButton";
+            this.BUPIDTopDownButton.Size = new System.Drawing.Size(324, 36);
+            this.BUPIDTopDownButton.TabIndex = 65;
+            this.BUPIDTopDownButton.Text = "Launch BUPID Top-Down Client";
+            this.BUPIDTopDownButton.UseVisualStyleBackColor = false;
+            this.BUPIDTopDownButton.Click += new System.EventHandler(this.BUPIDTopDownButton_Click);
+            // 
             // AnalyzeTandemMSGlycopeptideLaunchButton
             // 
+            this.AnalyzeTandemMSGlycopeptideLaunchButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.AnalyzeTandemMSGlycopeptideLaunchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AnalyzeTandemMSGlycopeptideLaunchButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AnalyzeTandemMSGlycopeptideLaunchButton.Location = new System.Drawing.Point(27, 455);
+            this.AnalyzeTandemMSGlycopeptideLaunchButton.Location = new System.Drawing.Point(27, 437);
             this.AnalyzeTandemMSGlycopeptideLaunchButton.Name = "AnalyzeTandemMSGlycopeptideLaunchButton";
             this.AnalyzeTandemMSGlycopeptideLaunchButton.Size = new System.Drawing.Size(283, 50);
             this.AnalyzeTandemMSGlycopeptideLaunchButton.TabIndex = 64;
-            this.AnalyzeTandemMSGlycopeptideLaunchButton.Text = "Analyze Tandem MS Glycopeptide Data";
-            this.AnalyzeTandemMSGlycopeptideLaunchButton.UseVisualStyleBackColor = true;
+            this.AnalyzeTandemMSGlycopeptideLaunchButton.Text = "Analyze Tandem MS Glycopeptides";
+            this.AnalyzeTandemMSGlycopeptideLaunchButton.UseVisualStyleBackColor = false;
             this.AnalyzeTandemMSGlycopeptideLaunchButton.Click += new System.EventHandler(this.AnalyzeTandemMSGlycopeptideLaunchButton_Click);
             // 
             // pictureBox1
@@ -129,24 +146,28 @@
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(553, 455);
+            this.button4.Location = new System.Drawing.Point(472, 455);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(325, 36);
             this.button4.TabIndex = 62;
             this.button4.Text = "Analyze Previously Generated Results";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(553, 169);
+            this.button2.Location = new System.Drawing.Point(471, 209);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(324, 36);
             this.button2.TabIndex = 61;
             this.button2.Text = "About";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // label2
@@ -154,7 +175,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(549, 44);
+            this.label2.Location = new System.Drawing.Point(468, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 22);
             this.label2.TabIndex = 60;
@@ -162,13 +183,15 @@
             // 
             // button10
             // 
+            this.button10.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(553, 127);
+            this.button10.Location = new System.Drawing.Point(472, 127);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(324, 36);
             this.button10.TabIndex = 59;
             this.button10.Text = "Link to Decon Tools";
-            this.button10.UseVisualStyleBackColor = true;
+            this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // label34
@@ -184,14 +207,16 @@
             // 
             // button13
             // 
+            this.button13.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button13.Enabled = false;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(27, 340);
+            this.button13.Location = new System.Drawing.Point(27, 322);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(283, 47);
             this.button13.TabIndex = 55;
             this.button13.Text = "Load Compositions Hypothesis";
-            this.button13.UseVisualStyleBackColor = true;
+            this.button13.UseVisualStyleBackColor = false;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // label30
@@ -216,9 +241,11 @@
             this.label29.TabIndex = 53;
             this.label29.Text = "To Generate Output Without GlycanCompositions Hypothesis,\r\n use Unsupervised Lear" +
     "ning";
+            this.label29.Visible = false;
             // 
             // button12
             // 
+            this.button12.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button12.Enabled = false;
             this.button12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.Location = new System.Drawing.Point(22, 599);
@@ -226,7 +253,8 @@
             this.button12.Size = new System.Drawing.Size(296, 47);
             this.button12.TabIndex = 52;
             this.button12.Text = "Perform Unsupervised Learning";
-            this.button12.UseVisualStyleBackColor = true;
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Visible = false;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // label28
@@ -234,7 +262,7 @@
             this.label28.AutoSize = true;
             this.label28.BackColor = System.Drawing.Color.White;
             this.label28.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(548, 285);
+            this.label28.Location = new System.Drawing.Point(467, 285);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(164, 22);
             this.label28.TabIndex = 51;
@@ -242,13 +270,15 @@
             // 
             // button11
             // 
+            this.button11.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(553, 328);
+            this.button11.Location = new System.Drawing.Point(472, 328);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(324, 36);
             this.button11.TabIndex = 50;
             this.button11.Text = "Set Features";
-            this.button11.UseVisualStyleBackColor = true;
+            this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // richTextBox1
@@ -262,46 +292,54 @@
             // 
             // button19
             // 
+            this.button19.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button19.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button19.Location = new System.Drawing.Point(553, 370);
+            this.button19.Location = new System.Drawing.Point(472, 370);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(324, 36);
             this.button19.TabIndex = 37;
             this.button19.Text = "Parameter Settings";
-            this.button19.UseVisualStyleBackColor = true;
+            this.button19.UseVisualStyleBackColor = false;
             this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // button7
             // 
+            this.button7.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(553, 84);
+            this.button7.Location = new System.Drawing.Point(472, 84);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(324, 36);
             this.button7.TabIndex = 35;
             this.button7.Text = "Help / Tutorial";
-            this.button7.UseVisualStyleBackColor = true;
+            this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
+            this.button6.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Location = new System.Drawing.Point(27, 211);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(168, 35);
             this.button6.TabIndex = 34;
             this.button6.Text = "Remove All Files";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
+            this.button5.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(553, 413);
+            this.button5.Location = new System.Drawing.Point(472, 413);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(324, 36);
             this.button5.TabIndex = 13;
             this.button5.Text = "Generate Compositions Hypothesis";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label1
@@ -317,25 +355,29 @@
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button3.Enabled = false;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(27, 395);
+            this.button3.Location = new System.Drawing.Point(27, 377);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(283, 50);
             this.button3.TabIndex = 5;
             this.button3.Text = "Perform Supervised Learning";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(202, 211);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(211, 35);
             this.button1.TabIndex = 2;
             this.button1.Text = "Add LC/MS Data File";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabControl1
@@ -356,7 +398,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(996, 712);
+            this.ClientSize = new System.Drawing.Size(822, 540);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.control1);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -393,7 +435,6 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label34;
         public System.Windows.Forms.OpenFileDialog oFDDeconData;
         private System.Windows.Forms.OpenFileDialog oFDGenerator;
         private System.Windows.Forms.Button button10;
@@ -402,5 +443,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button AnalyzeTandemMSGlycopeptideLaunchButton;
+        private System.Windows.Forms.Button BUPIDTopDownButton;
+        private System.Windows.Forms.Label label34;
     }
 }

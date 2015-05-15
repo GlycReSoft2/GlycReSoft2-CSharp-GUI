@@ -1,6 +1,6 @@
 ﻿namespace GlycReSoft
 {
-    partial class parameters
+    partial class ParametersForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(parameters));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ParametersForm));
             this.oFDPara = new System.Windows.Forms.OpenFileDialog();
             this.sFDPara = new System.Windows.Forms.SaveFileDialog();
             this.label1 = new System.Windows.Forms.Label();

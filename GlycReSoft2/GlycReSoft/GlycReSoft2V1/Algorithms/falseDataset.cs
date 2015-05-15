@@ -12,31 +12,31 @@ namespace GlycReSoft
     {
         static Random rnd = new Random();
         //obtain a random false list for ROC generation, using the input file (comptable file) as base.
-        public List<composition.comphypo> genFalse(String path, List<composition.comphypo> trueComhypo, OpenFileDialog oFDPPMSD)
+        public List<CompositionHypothesisEntry> genFalse(String path, List<CompositionHypothesisEntry> trueComhypo, OpenFileDialog oFDPPMSD)
         {
             //table is used to store the data before the calculation
-            composition.generatorData DATA = new composition.generatorData();
-            List<composition.compTable> GD = new List<composition.compTable>();
+            GlycanHypothesisCombinatorialGenerator DATA = new GlycanHypothesisCombinatorialGenerator();
+            List<GlycanCompositionTable> GD = new List<GlycanCompositionTable>();
             //This function is used to read the cpos file and translate it to generatorData format. Converting all letters in bounds to numbers while its at it.
             DATA = extractFile(path);
             
             //The Final Result will have approximately as many lines as the user input composition hypothesis.
             int usingNumberofFiles = 20;
-            List<composition.comphypo> FinalAns = new List<composition.comphypo>();
+            List<CompositionHypothesisEntry> FinalAns = new List<CompositionHypothesisEntry>();
             for (int i = 0; i < usingNumberofFiles; i++)
             {
-                List<composition.comphypo> FalseSet = obtainFalse(DATA, trueComhypo.Count() / usingNumberofFiles, oFDPPMSD);
+                List<CompositionHypothesisEntry> FalseSet = obtainFalse(DATA, trueComhypo.Count() / usingNumberofFiles, oFDPPMSD);
                 FinalAns.AddRange(FalseSet);
             }
             FinalAns.AddRange(trueComhypo);
             return FinalAns;
         }
         //This function is used to read the cpos file and translate it to generatorData format.
-        private composition.generatorData extractFile(String path)
+        private GlycanHypothesisCombinatorialGenerator extractFile(String path)
         {
             //table is used to store the data before the calculation
-            composition.generatorData DATA = new composition.generatorData();
-            List<composition.compTable> GD = new List<composition.compTable>();
+            GlycanHypothesisCombinatorialGenerator DATA = new GlycanHypothesisCombinatorialGenerator();
+            List<GlycanCompositionTable> GD = new List<GlycanCompositionTable>();
             try
             {
                 FileStream reading = new FileStream(path, FileMode.Open, FileAccess.Read);
@@ -67,7 +67,7 @@ namespace GlycReSoft
                     String[] eachentry = Line.Split(',');
                     if (eachentry[0] == "Modification%^&!@#*()iop")
                         break;
-                    composition.compTable CT = new composition.compTable();
+                    GlycanCompositionTable CT = new GlycanCompositionTable();
                     CT.Letter = eachentry[0];
                     CT.Molecule = eachentry[1];
                     if (firstRow)
@@ -97,21 +97,21 @@ namespace GlycReSoft
                 MessageBox.Show("Error in loading GlycanCompositions Table (cpos). Error:" + compoex);
             }
 
-            DATA.aTable = new List<composition.arTable>();
+            DATA.aTable = new List<Boundary>();
             DATA.comTable = GD;
             return DATA;
         }
-        private List<composition.comphypo> obtainFalse(composition.generatorData GD, int numofLines, OpenFileDialog oFDPPMSD)
+        private List<CompositionHypothesisEntry> obtainFalse(GlycanHypothesisCombinatorialGenerator GD, int numofLines, OpenFileDialog oFDPPMSD)
         {
             //obtain a random list with the correct bounds but the elemental composition randomized:
-            List<composition.compTable> randomCT = randomList(GD.comTable);
-            composition comp = new composition();
+            List<GlycanCompositionTable> randomCT = randomList(GD.comTable);
+            CompositionHypothesisTabbedForm comp = new CompositionHypothesisTabbedForm();
             GD.comTable = randomCT;
-            List<composition.comphypo> CTAns = comp.genHypo(GD);
+            List<CompositionHypothesisEntry> CTAns = comp.GenerateHypothesis(GD);
             List<int> rangeone = Enumerable.Range(0, CTAns.Count()).ToList();
             rangeone.Shuffle();
             //restricting them to numperlist per list, which is half of the number of lines of the original composition hypothesis divided by numofFile            Int32 numperlist = (numofLines / 2) / numofFiles;
-            List<composition.comphypo> finalAns = new List<composition.comphypo>();
+            List<CompositionHypothesisEntry> finalAns = new List<CompositionHypothesisEntry>();
             for (int j = 0; j < numofLines; j++)
             {
                 finalAns.Add(CTAns[rangeone[j]]);
@@ -125,7 +125,7 @@ namespace GlycReSoft
                 {
                     if (!String.IsNullOrEmpty(oFDPPMSD.FileName))
                     {
-                        List<composition.comphypo> FinalAns = getPPhypo(finalAns, finalAns, genFalsePPMSD(oFDPPMSD.FileName));
+                        List<CompositionHypothesisEntry> FinalAns = getPPhypo(finalAns, finalAns, genFalsePPMSD(oFDPPMSD.FileName));
                         List<int> rangethree = Enumerable.Range(0, FinalAns.Count).ToList();
                         rangethree.Shuffle();
                         finalAns.Clear();
@@ -141,14 +141,14 @@ namespace GlycReSoft
             }
             for (int i = 0; i < finalAns.Count(); i++)
             {
-                finalAns[i].TrueOrFalse = false;
+                finalAns[i].IsDecoy = false;
             }
 
             return finalAns;
         }
-        private List<composition.compTable> randomList(List<composition.compTable> oriCT)
+        private List<GlycanCompositionTable> randomList(List<GlycanCompositionTable> oriCT)
         {
-            List<composition.compTable> CT = oriCT;
+            List<GlycanCompositionTable> CT = oriCT;
             List<string> correctBounds = new List<string>();
             int numberOfElements = 0;
             for (int i = 0; i < CT.Count; i++)
@@ -190,19 +190,19 @@ namespace GlycReSoft
 
             return CT;
         }
-        private List<composition.comphypo> getPPhypo(List<composition.comphypo> CHy, List<composition.comphypo> CH, List<composition.PPMSD> PP)
+        private List<CompositionHypothesisEntry> getPPhypo(List<CompositionHypothesisEntry> CHy, List<CompositionHypothesisEntry> CH, List<Peptide> PP)
         {
-            List<composition.comphypo> Ans = new List<composition.comphypo>();
+            List<CompositionHypothesisEntry> Ans = new List<CompositionHypothesisEntry>();
             Ans.AddRange(CHy);
             for (int i = 0; i < PP.Count; i++)
             {
-                if (PP[i].selected)
+                if (PP[i].Selected)
                 {
-                    Int32 Count = Convert.ToInt32(PP[i].numGly);
-                    List<composition.comphypo> Temp = new List<composition.comphypo>();
-                    composition.comphypo temp = new composition.comphypo();
+                    Int32 Count = Convert.ToInt32(PP[i].NumGlycosylations);
+                    List<CompositionHypothesisEntry> Temp = new List<CompositionHypothesisEntry>();
+                    CompositionHypothesisEntry temp = new CompositionHypothesisEntry();
                     //First line:
-                    temp.compoundCompo = "";
+                    temp.CompoundComposition = "";
                     temp.AdductNum = 0;
                     temp.AddRep = "";
                     temp.eqCount.Add("A", 0);
@@ -222,24 +222,24 @@ namespace GlycReSoft
                     temp.eqCount.Add("O", 0);
                     temp.eqCount.Add("P", 0);
                     temp.eqCount.Add("Q", 0);
-                    temp.MW = PP[i].Mass;
+                    temp.MassWeight = PP[i].Mass;
                     //columns for glycopeptides
                     temp.PepModification = PP[i].Modifications;
                     temp.PepSequence = PP[i].Sequence;
                     temp.MissedCleavages = PP[i].MissedCleavages;
-                    temp.numGly = 0;
+                    temp.NumGlycosylations = 0;
                     Temp.Add(temp);
                     for (int j = 0; j < Count; j++)
                     {
-                        List<composition.comphypo> Temp2 = new List<composition.comphypo>();
+                        List<CompositionHypothesisEntry> Temp2 = new List<CompositionHypothesisEntry>();
                         for (int k = 0; k < Temp.Count; k++)
                         {
                             for (int l = 0; l < CH.Count; l++)
                             {
-                                composition.comphypo temp2 = new composition.comphypo();
+                                CompositionHypothesisEntry temp2 = new CompositionHypothesisEntry();
                                 temp2 = CH[l];
-                                temp2.MW = temp2.MW + Temp[k].MW;
-                                temp2.numGly = Count;
+                                temp2.MassWeight = temp2.MassWeight + Temp[k].MassWeight;
+                                temp2.NumGlycosylations = Count;
                                 temp2.PepModification = Temp[k].PepModification;
                                 temp2.PepSequence = Temp[k].PepSequence;
                                 temp2.MissedCleavages = Temp[k].MissedCleavages;
@@ -253,12 +253,12 @@ namespace GlycReSoft
             }
             return Ans;
         }
-        private List<composition.PPMSD> genFalsePPMSD(String path)
+        private List<Peptide> genFalsePPMSD(String path)
         {
             Features fea = new Features();
-            List<composition.PPMSD> PP = fea.readtablim(path);
-            composition comp = new composition();
-            String sequence = comp.getSequence(PP);
+            List<Peptide> PP = fea.readtablim(path);
+            CompositionHypothesisTabbedForm comp = new CompositionHypothesisTabbedForm();
+            String sequence = comp.GetSequenceFromCleavedPeptides(PP);
             List<int> forRandom = new List<int>
             {
                {0},{1},{2}
@@ -268,7 +268,7 @@ namespace GlycReSoft
                {4},{5},{6},{7},{8},{9},{10},{11}
             };
 
-            List<composition.PPMSD> finalAns = new List<composition.PPMSD>();
+            List<Peptide> finalAns = new List<Peptide>();
             Int32 StartAA = 0;
             Int32 EndAA = 0;
             while (EndAA != sequence.Count())
@@ -277,7 +277,7 @@ namespace GlycReSoft
                 if (forRandom[0] == 1)
                 {
                     //add in this fragment
-                    composition.PPMSD Ans = new composition.PPMSD();
+                    Peptide Ans = new Peptide();
                     forlength.Shuffle();
                     Int32 length = forlength[0];
                     EndAA = StartAA + length;
@@ -291,8 +291,8 @@ namespace GlycReSoft
                         Fra = Fra + sequence[i];
                     }
                     StartAA = StartAA + length;
-                    Ans.selected = true;
-                    Ans.number = 1;
+                    Ans.Selected = true;
+                    Ans.PeptideIndex = 1;
                     Ans.Mass = getFragmentMass(Fra);
                     Ans.Charge = 0;
                     Ans.Modifications = "";
@@ -300,7 +300,7 @@ namespace GlycReSoft
                     Ans.PreviousAA = "";
                     Ans.NextAA = "";
                     forRandom.Shuffle();
-                    Ans.numGly = Convert.ToInt32(forRandom[0]);
+                    Ans.NumGlycosylations = Convert.ToInt32(forRandom[0]);
                     finalAns.Add(Ans);
                 }
                 else

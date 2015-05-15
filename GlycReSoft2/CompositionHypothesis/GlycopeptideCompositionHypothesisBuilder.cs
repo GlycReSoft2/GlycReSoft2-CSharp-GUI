@@ -13,6 +13,7 @@ namespace GlycReSoft.CompositionHypothesis
         public CompositionHypothesis GlycanCompositions;
         public List<MSDigestPeptide> Peptides;
         public CompositionHypothesis GlycopeptideComposition;
+        public Boolean KeepUnglycosylatedPeptides = false;
 
         public GlycopeptideCompositionHypothesisBuilder(CompositionHypothesis glycanCompositionHypothesis, List<MSDigestPeptide> peptides)
         {
@@ -31,7 +32,9 @@ namespace GlycReSoft.CompositionHypothesis
         {
             int peptideIter = 0;
             foreach (MSDigestPeptide peptide in Peptides)
-            {               
+            {
+                peptideIter++;
+                //Console.WriteLine("Working on Peptide {0}, {1}", peptideIter, peptide);
                 //Creates the unglycosylated peptide composition row.
                 GlycopeptideComposition rawPeptideComposition = new GlycopeptideComposition(peptide);
                 int numGlycosylations = rawPeptideComposition.GlycosylationCount;                
@@ -40,12 +43,15 @@ namespace GlycReSoft.CompositionHypothesis
                 //If there were no glycosylations on this peptide to begin with, this step is done!
                 if (numGlycosylations == 0)
                 {
-                    GlycopeptideComposition.Compositions.Add(rawPeptideComposition);
+                    if (KeepUnglycosylatedPeptides)
+                    {
+                        GlycopeptideComposition.Compositions.Add(rawPeptideComposition);
+                    }
                     continue;
                 }                
                 //This is a combinations with replacement problem, meaning that the number of choices with each iteration does not shrink and order does not matter.
                 //Since convergent glycan compositions cannot be distinguished, we may be able to reduce the total number generated. 
-                Console.WriteLine("[{4}] This peptide has {0} (K) glycosylation sites, and there are {1} (N) glycans to choose from. Combinations = {2} new objects without convergent compositions. Current Memory Size: {3} ", numGlycosylations, GlycanCompositions.Compositions.Count, Numerics.Combinations(GlycanCompositions.Compositions.Count, numGlycosylations), GC.GetTotalMemory(false), peptideIter++);
+                //Console.WriteLine("[{4}] This peptide has {0} (K) glycosylation sites, and there are {1} (N) glycans to choose from. Combinations = {2} new objects without convergent compositions. Current Memory Size: {3} ", numGlycosylations, GlycanCompositions.Compositions.Count, Numerics.Combinations(GlycanCompositions.Compositions.Count, numGlycosylations), GC.GetTotalMemory(false), peptideIter++);
                 //Represent the iterative increase in glycosylation as a set of queues. Each possible glycoform
                 //is generated incrementally from previously generated set of compositions. We only need the set of 
                 //compositions we created from the last iteration to build the next iteration.
@@ -78,16 +84,16 @@ namespace GlycReSoft.CompositionHypothesis
                         }
                     }
                     int lengthOfNext = nextCompositions.Count;
+                    Console.WriteLine("Length of run: {0:N}", lengthOfNext);
                     previousCompositions = nextCompositions;
                     nextCompositions = new Queue<GlycopeptideComposition>();                    
-                    Console.WriteLine("[{5}]{0} * {1} = {2}. Generated {3}. Saved {6}%\nMemory Size: {4}", lengthOfPrevious, GlycanCompositions.Compositions.Count,
-                        lengthOfPrevious * GlycanCompositions.Compositions.Count, lengthOfNext, GC.GetTotalMemory(false), depthIter, (1 - (lengthOfNext / (double)(lengthOfPrevious * GlycanCompositions.Compositions.Count))) * 100);
+                    //Console.WriteLine("[{5}]{0} * {1} = {2}. Generated {3}. Saved {6}%\nMemory Size: {4}", lengthOfPrevious, GlycanCompositions.Compositions.Count,                        lengthOfPrevious * GlycanCompositions.Compositions.Count, lengthOfNext, GC.GetTotalMemory(false), depthIter, (1 - (lengthOfNext / (double)(lengthOfPrevious * GlycanCompositions.Compositions.Count))) * 100);
                 }
                 //After the last pass through the loop, previousComposition still holds all of the most recently generated values,
                 //so we need to add them to the total list.
                 GlycopeptideComposition.Compositions.AddRange(previousCompositions);
             }
-            peptideIter++;
+            Console.WriteLine("Build complete.");
         }
     }
 }

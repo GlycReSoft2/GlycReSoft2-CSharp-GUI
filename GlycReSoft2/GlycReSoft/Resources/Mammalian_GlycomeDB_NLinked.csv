@@ -1,4 +1,4 @@
-Molecular Weight,C,Compositions,GalNAcS,GalS,GlcNAcP,GlcNAcS,NeuGc,Hex,Kdn,NeuAc,Fuc,Xyl,HexNAc,NeuAcAc,Water,Adduct/Replacement,Adduct Amount,Peptide Sequence,Peptide Modification,Peptide Missed Cleavage Number,Number of Glycan Attachment to Peptide,Start AA,End AA
+Molecular Weight,C,Compositions,G:GalNAcS,G:GalS,G:GlcNAcP,G:GlcNAcS,G:NeuGc,G:Hex,G:Kdn,G:NeuAc,G:Fuc,G:Xyl,G:HexNAc,G:NeuAcAc,G:Water,Adduct/Replacement,Adduct Amount,Peptide Sequence,Peptide Modification,Peptide Missed Cleavage Number,Number of Glycan Attachment to Peptide,Start AA,End AA
 2882.0466697887005,0,[0;0;0;0;0;8;0;0;1;0;7;0],0,0,0,0,0,8,0,0,1,0,7,0,1,/0,0,,,0,0,0,0
 1543.5090740986998,0,[1;0;0;0;0;3;0;0;1;0;3;0],1,0,0,0,0,3,0,0,1,0,3,0,1,/0,0,,,0,0,0,0
 1640.5921726036997,0,[0;0;0;0;0;5;0;0;0;0;4;0],0,0,0,0,0,5,0,0,0,0,4,0,1,/0,0,,,0,0,0,0

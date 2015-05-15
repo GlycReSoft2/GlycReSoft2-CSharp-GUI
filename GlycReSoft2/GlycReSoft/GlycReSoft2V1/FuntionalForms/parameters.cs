@@ -10,14 +10,14 @@ using System.IO;
 
 namespace GlycReSoft
 {
-    public partial class parameters : Form
+    public partial class ParametersForm : Form
     {
         /**
         Note: From left to right, the numbers in a *.para file means:
         Data Noise Threshold 0, Minimum Socre Threshold 1, Match Error (E_M) 2, Molecular Weight Lower Bound 3,
         Molecular Weight Upper Bound 4, Grouping Error (E_G) 5, Adduct Tolerance (E_A) 6, Minimum Number of Scans 7.
         **/
-        public parameters()
+        public ParametersForm()
         {
             //First, read the Parameters from file.
             String ParaPath = Application.StartupPath + "\\Parameters.para";
@@ -43,12 +43,12 @@ namespace GlycReSoft
         //This is the load button.
         private void button2_Click(object sender, EventArgs e)
         {
-            this.loadParameters();
+            this.LoadParameters();
         }
         //This is the save button.
         private void button3_Click(object sender, EventArgs e)
         {
-            this.saveParameters();
+            this.SaveParameters();
         }
 
         //This is the Reset to Default button.
@@ -75,11 +75,11 @@ namespace GlycReSoft
         //This is the OK button. It applies the changes and close the window.
         private void button4_Click(object sender, EventArgs e)
         {
-            this.applypara();
+            this.ApplyParameters();
             this.Close();
         }
 
-        public void applypara()
+        public void ApplyParameters()
         {
             //First, read the 2 Parameters NOT on the Parameters form.
             String[] Param = new String[8];
@@ -106,7 +106,7 @@ namespace GlycReSoft
         }
 
         //This is used to save parameter data. It can be used by other classes.
-        public void saveParameters()
+        public void SaveParameters()
         {
             sFDPara.Filter = "para files (*.para)|*.para";
             sFDPara.ShowDialog();
@@ -140,7 +140,7 @@ namespace GlycReSoft
         }
 
         //This loads parameter data. It can be used by another class.
-        public void loadParameters()
+        public void LoadParameters()
         {
             oFDPara.Filter = "para files (*.para)|*.para";
             oFDPara.ShowDialog();
@@ -179,20 +179,20 @@ namespace GlycReSoft
         }
 
         //This is a class to store parameter data.
-        public class para
+        public class ParameterSettings
         {
-            public Double dataNoiseTheshold { get; set; }
-            public Double minScoreThreshold { get; set; }
-            public Double matchErrorEM { get; set; }
-            public Int32 molecularWeightLowerBound { get; set; }
-            public Int32 molecularWeightUpperBound { get; set; }
-            public Double groupingErrorEG { get; set; }
-            public Double adductToleranceEA { get; set; }
-            public Int32 minScanNumber { get; set; }
+            public Double DataNoiseTheshold { get; set; }
+            public Double MinScoreThreshold { get; set; }
+            public Double MatchErrorEM { get; set; }
+            public Int32 MolecularWeightLowerBound { get; set; }
+            public Int32 MolecularWeightUpperBound { get; set; }
+            public Double GroupingErrorEG { get; set; }
+            public Double AdductToleranceEA { get; set; }
+            public Int32 MinScanNumber { get; set; }
         }
 
         //This is for other classes to read parameter data.
-        public para getParameters()
+        public ParameterSettings GetParameters()
         {
             String ParaPath = Application.StartupPath + "\\Parameters.para";
             FileStream FS = new FileStream(ParaPath, FileMode.Open, FileAccess.Read);
@@ -200,15 +200,15 @@ namespace GlycReSoft
             String Line = ReadPara.ReadLine();
             FS.Close();
             String[] Param = Line.Split(',');
-            para paradata = new para();
-            paradata.dataNoiseTheshold = Convert.ToDouble(Param[0]);
-            paradata.minScoreThreshold = Convert.ToDouble(Param[1]);
-            paradata.matchErrorEM = Convert.ToDouble(Param[2]);
-            paradata.molecularWeightLowerBound = Convert.ToInt32(Param[3]);
-            paradata.molecularWeightUpperBound = Convert.ToInt32(Param[4]);
-            paradata.groupingErrorEG = Convert.ToDouble(Param[5]);
-            paradata.adductToleranceEA = Convert.ToDouble(Param[6]);
-            paradata.minScanNumber = Convert.ToInt32(Param[7]);
+            ParameterSettings paradata = new ParameterSettings();
+            paradata.DataNoiseTheshold = Convert.ToDouble(Param[0]);
+            paradata.MinScoreThreshold = Convert.ToDouble(Param[1]);
+            paradata.MatchErrorEM = Convert.ToDouble(Param[2]);
+            paradata.MolecularWeightLowerBound = Convert.ToInt32(Param[3]);
+            paradata.MolecularWeightUpperBound = Convert.ToInt32(Param[4]);
+            paradata.GroupingErrorEG = Convert.ToDouble(Param[5]);
+            paradata.AdductToleranceEA = Convert.ToDouble(Param[6]);
+            paradata.MinScanNumber = Convert.ToInt32(Param[7]);
             return paradata;
         }
 

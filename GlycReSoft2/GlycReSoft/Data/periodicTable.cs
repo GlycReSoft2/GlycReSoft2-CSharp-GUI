@@ -5,10 +5,10 @@ using System.Text;
 
 namespace GlycReSoft
 {
-    class periodicTable
+    class PeriodicTable
     {
         private static Dictionary<String,Double> pTable = new Dictionary<String,Double>();        
-        static periodicTable(){
+        static PeriodicTable(){
             //The AME 2012 atomic mass evaluation, M. Wang, G. Augi, A. H. Wapstra, F. G. Kondev, M. MacCormick, X. Xu, and B. Pfeiffer. Chinese Phys. C 36, 1603 (2012).{AME 2012}
             pTable.Add("H", 1.0078250320);
             pTable.Add("H+", 1.00727646677);

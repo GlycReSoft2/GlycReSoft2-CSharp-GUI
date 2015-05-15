@@ -76,7 +76,9 @@ namespace GlycReSoft.CompositionHypothesis
                 {
                     break;
                 }
-                MoleculeNames.Add(headerText);
+                //If the Glycan Composition contains G:-prefixes, remove them. They are a 
+                //leftover from legacy code.
+                MoleculeNames.Add(headerText.Replace("G:", ""));
             }
             
         }
@@ -150,7 +152,8 @@ namespace GlycReSoft.CompositionHypothesis
             line += "Peptide Missed Cleavage Number,";
             line += "Number of Glycan Attachment to Peptide,";
             line += "Start AA,";
-            line += "End AA";
+            line += "End AA,";
+            line += "Protein ID";
 
             return line;
         }

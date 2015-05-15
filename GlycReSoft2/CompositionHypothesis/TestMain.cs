@@ -8,46 +8,56 @@ namespace GlycReSoft.CompositionHypothesis
 {
     public static class TestMain
     {
-        static void Main(string[] args)
+        public static void TestGlycanCompositionHypothesis()
         {
+            String testGlycanCompositionFile = @"TestData\Glycresoft glycan hypothesis.csv";
             CompositionHypothesis glycanHypothesis = new CompositionHypothesis();
-            String testGlycanCompositionFile = @"C:\Users\jaklein\Dropbox\GlycomicsSandbox\Test Data\Glycresoft glycan hypothesis.csv";
-
             glycanHypothesis.ParseCompositionHypothesisCsv<GlycanComposition>(testGlycanCompositionFile);
             Console.WriteLine(glycanHypothesis);
-
-            String testGlycopeptideCompositionFile = @"C:\Users\jaklein\Dropbox\GlycomicsSandbox\Test Data\HA-USSR-Glycopeptide hypothesis.csv";
+        }
+        public static void TestGlycoPeptideHypothesis()
+        {
+            String testGlycopeptideCompositionFile = @"TestData\HA-USSR-Glycopeptide hypothesis.csv";
             CompositionHypothesis glycopeptideHypothesis = new CompositionHypothesis();
             glycopeptideHypothesis.ParseCompositionHypothesisCsv<GlycopeptideComposition>(testGlycopeptideCompositionFile);
             Console.WriteLine(glycopeptideHypothesis);
-
-            String testMSDigestFile = @"C:\Users\jaklein\Dropbox\GlycomicsSandbox\Test Data\KK-USSR-digest-Prospector output.xml";
+        }
+        public static void TestBuildGlycoPeptideHypothesis()
+        {
+            String testGlycanCompositionFile = @"TestData\Glycresoft glycan hypothesis.csv";
+            CompositionHypothesis glycanHypothesis = new CompositionHypothesis();
+            glycanHypothesis.ParseCompositionHypothesisCsv<GlycanComposition>(testGlycanCompositionFile);
+            String testMSDigestFile = @"TestData\KK-USSR-digest-Prospector output.xml";
             MSDigestReport msdigest = MSDigestReport.Load(testMSDigestFile);
-
-            foreach (MSDigestPeptide pept in msdigest.Peptides)
+            int counter = 0;
+            foreach (MSDigestPeptide pep in msdigest.Peptides)
             {
-                pept.numGly = 7;
+                counter += pep.NumGlycosylations;
+                if (counter > 30)
+                {
+                    pep.NumGlycosylations = 0;
+                }
             }
-            Console.WriteLine(msdigest.Peptides.Count);
-            Random rng = new Random(1);
-
-            //Dictionary<int, bool> keepers = new Dictionary<int, bool>();
-            //int nKeep = 100;
-
-            //CompositionHypothesis glycanHypothesis2 = CompositionHypothesis.ParseCsv<GlycanComposition>(testGlycanCompositionFile);
-            //glycanHypothesis2.Compositions = glycanHypothesis.Compositions.Take(nKeep).ToList();
-
             try
             {
                 GlycopeptideCompositionHypothesisBuilder builder = new GlycopeptideCompositionHypothesisBuilder(glycanHypothesis, msdigest.Peptides);
+                Console.WriteLine("Building Hypothesis");
                 builder.BuildCompositionHypothesis();
                 Console.WriteLine(builder.GlycopeptideComposition);
+                builder.GlycopeptideComposition.WriteCompositionHypothesisCsv("TestData/TestOutputHypothesis.csv");
             }
             catch (OutOfMemoryException ex)
             {
                 Console.WriteLine("\n\n\n!!!!!!!!!!!!!!!!Combinatorics exceeded memory size!", ex.Message, "\n\n\n!!!!!!!!!!!!!!!!!!!!!!!!!!");
             }
+        }
+        static void Main(string[] args)
+        {
 
+            TestGlycanCompositionHypothesis();
+            TestGlycoPeptideHypothesis();
+            TestBuildGlycoPeptideHypothesis();
+            
             Console.WriteLine("Done!");
             Console.ReadKey();
         }

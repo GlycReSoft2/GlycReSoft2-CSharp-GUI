@@ -70,7 +70,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <NoWin32Manifest>true</NoWin32Manifest>
@@ -121,12 +121,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GlycReSoft2V1\Algorithms\falseDataset.cs" />
-    <Compile Include="GlycReSoft2V1\FuntionalForms\AboutBox1.cs">
+    <Compile Include="GlycReSoft2V1\DisplayForms\BUPIDTopDownBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlycReSoft2V1\DisplayForms\BUPIDTopDownBrowser.Designer.cs">
+      <DependentUpon>BUPIDTopDownBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlycReSoft2V1\FuntionalForms\AboutWindow.cs">
       <SubType>Form</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="GlycReSoft2V1\FuntionalForms\AboutBox1.Designer.cs">
-      <DependentUpon>AboutBox1.cs</DependentUpon>
+    <Compile Include="GlycReSoft2V1\FuntionalForms\AboutWindow.Designer.cs">
+      <DependentUpon>AboutWindow.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Data\aminoAcidMass.cs" />
@@ -136,7 +142,7 @@
     <Compile Include="GlycReSoft2V1\FuntionalForms\FormerResults.Designer.cs">
       <DependentUpon>FormerResults.cs</DependentUpon>
     </Compile>
-    <Compile Include="GlycReSoft2V1\AMFunctions\groupingResults.cs" />
+    <Compile Include="GlycReSoft2V1\AMFunctions\GroupingResults.cs" />
     <Compile Include="GlycReSoft2V1\DisplayForms\PleaseWait.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,7 +161,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="GlycReSoft2V1\Algorithms\supervisedLearning.cs" />
+    <Compile Include="GlycReSoft2V1\Algorithms\SupervisedLearner.cs" />
     <Compile Include="GlycReSoft2V1\Algorithms\unsupervisedLearning.cs" />
     <Compile Include="HomeScreen.cs">
       <SubType>Form</SubType>
@@ -163,17 +169,17 @@
     <Compile Include="HomeScreen.Designer.cs">
       <DependentUpon>HomeScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="GlycReSoft2V1\FuntionalForms\parameters.cs">
+    <Compile Include="GlycReSoft2V1\FuntionalForms\Parameters.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GlycReSoft2V1\FuntionalForms\parameters.Designer.cs">
-      <DependentUpon>parameters.cs</DependentUpon>
+    <Compile Include="GlycReSoft2V1\FuntionalForms\Parameters.Designer.cs">
+      <DependentUpon>Parameters.cs</DependentUpon>
     </Compile>
-    <Compile Include="GlycReSoft2V1\FuntionalForms\composition.cs">
+    <Compile Include="GlycReSoft2V1\FuntionalForms\CompositionHypothesis.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GlycReSoft2V1\FuntionalForms\composition.Designer.cs">
-      <DependentUpon>composition.cs</DependentUpon>
+    <Compile Include="GlycReSoft2V1\FuntionalForms\CompositionHypothesis.Designer.cs">
+      <DependentUpon>CompositionHypothesis.cs</DependentUpon>
     </Compile>
     <Compile Include="GlycReSoft2V1\FuntionalForms\Features.cs">
       <SubType>Form</SubType>
@@ -181,11 +187,11 @@
     <Compile Include="GlycReSoft2V1\FuntionalForms\Features.Designer.cs">
       <DependentUpon>Features.cs</DependentUpon>
     </Compile>
-    <Compile Include="GlycReSoft2V1\FuntionalForms\tag1Result.cs">
+    <Compile Include="GlycReSoft2V1\FuntionalForms\MS1ResultsViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GlycReSoft2V1\FuntionalForms\tag1Result.Designer.cs">
-      <DependentUpon>tag1Result.cs</DependentUpon>
+    <Compile Include="GlycReSoft2V1\FuntionalForms\MS1ResultsViewer.Designer.cs">
+      <DependentUpon>MS1ResultsViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -197,12 +203,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="GlycReSoft2V1\FuntionalForms\AboutBox1.resx">
-      <DependentUpon>AboutBox1.cs</DependentUpon>
+    <EmbeddedResource Include="GlycReSoft2V1\DisplayForms\BUPIDTopDownBrowser.resx">
+      <DependentUpon>BUPIDTopDownBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlycReSoft2V1\FuntionalForms\AboutWindow.resx">
+      <DependentUpon>AboutWindow.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="GlycReSoft2V1\FuntionalForms\composition.resx">
-      <DependentUpon>composition.cs</DependentUpon>
+    <EmbeddedResource Include="GlycReSoft2V1\FuntionalForms\CompositionHypothesis.resx">
+      <DependentUpon>CompositionHypothesis.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GlycReSoft2V1\DisplayForms\Welcome.resx">
@@ -218,8 +227,8 @@
     <EmbeddedResource Include="GlycReSoft2V1\FuntionalForms\FormerResults.resx">
       <DependentUpon>FormerResults.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GlycReSoft2V1\FuntionalForms\parameters.resx">
-      <DependentUpon>parameters.cs</DependentUpon>
+    <EmbeddedResource Include="GlycReSoft2V1\FuntionalForms\Parameters.resx">
+      <DependentUpon>Parameters.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GlycReSoft2V1\FuntionalForms\Features.resx">
       <DependentUpon>Features.cs</DependentUpon>
@@ -230,8 +239,8 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="GlycReSoft2V1\FuntionalForms\tag1Result.resx">
-      <DependentUpon>tag1Result.cs</DependentUpon>
+    <EmbeddedResource Include="GlycReSoft2V1\FuntionalForms\MS1ResultsViewer.resx">
+      <DependentUpon>MS1ResultsViewer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -306,6 +315,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BUPIDClient\BUPIDClient.csproj">
+      <Project>{994844c9-f0f1-489a-973e-5f3722904e9b}</Project>
+      <Name>BUPIDClient</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CompositionHypothesis\CompositionHypothesis.csproj">
       <Project>{6ec79573-c90b-4b48-b28b-cf67995a63ad}</Project>
       <Name>CompositionHypothesis</Name>

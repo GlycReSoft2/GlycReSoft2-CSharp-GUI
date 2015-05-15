@@ -4,17 +4,34 @@
         <name>GlycReSoft2</name>
     </assembly>
     <members>
-        <member name="F:GlycReSoft.AboutBox1.components">
+        <member name="F:GlycReSoft.GlycReSoft2V1.DisplayForms.BUPIDTopDownBrowser.components">
             <summary>
             Required designer variable.
             </summary>
         </member>
-        <member name="M:GlycReSoft.AboutBox1.Dispose(System.Boolean)">
+        <member name="M:GlycReSoft.GlycReSoft2V1.DisplayForms.BUPIDTopDownBrowser.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:GlycReSoft.GlycReSoft2V1.DisplayForms.BUPIDTopDownBrowser.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:GlycReSoft.AboutWindow.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:GlycReSoft.AboutWindow.Dispose(System.Boolean)">
             <summary>
             Clean up any resources being used.
             </summary>
         </member>
-        <member name="M:GlycReSoft.AboutBox1.InitializeComponent">
+        <member name="M:GlycReSoft.AboutWindow.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
@@ -68,6 +85,16 @@
             <summary>
               Overrides the current thread's CurrentUICulture property for all
               resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:GlycReSoft.Properties.Resources.bupidEnabled">
+            <summary>
+              Looks up a localized string similar to Yes.
+            </summary>
+        </member>
+        <member name="P:GlycReSoft.Properties.Resources.bupidUrl">
+            <summary>
+              Looks up a localized string similar to http://bumc-florida.bumc.bu.edu/BUPID_TD/.
             </summary>
         </member>
         <member name="P:GlycReSoft.Properties.Resources.DefaultComposition">
@@ -173,60 +200,60 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="M:GlycReSoft.parameters.#ctor">
+        <member name="M:GlycReSoft.ParametersForm.#ctor">
                     Note: From left to right, the numbers in a *.para file means:
                     Data Noise Threshold 0, Minimum Socre Threshold 1, Match Error (E_M) 2, Molecular Weight Lower Bound 3,
                     Molecular Weight Upper Bound 4, Grouping Error (E_G) 5, Adduct Tolerance (E_A) 6, Minimum Number of Scans 7.
                     *
         </member>
-        <member name="F:GlycReSoft.parameters.components">
+        <member name="F:GlycReSoft.ParametersForm.components">
             <summary>
             Required designer variable.
             </summary>
         </member>
-        <member name="M:GlycReSoft.parameters.Dispose(System.Boolean)">
+        <member name="M:GlycReSoft.ParametersForm.Dispose(System.Boolean)">
             <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
-        <member name="M:GlycReSoft.parameters.InitializeComponent">
+        <member name="M:GlycReSoft.ParametersForm.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="M:GlycReSoft.composition.getCompHypoFromStream(System.IO.MemoryStream)">
+        <member name="M:GlycReSoft.CompositionHypothesisTabbedForm.getCompHypoFromStream(System.IO.MemoryStream)">
             <summary>
             
             </summary>
             <param name="reading"></param>
             <returns></returns>
         </member>
-        <member name="F:GlycReSoft.composition.components">
+        <member name="F:GlycReSoft.CompositionHypothesisTabbedForm.components">
             <summary>
             Required designer variable.
             </summary>
         </member>
-        <member name="M:GlycReSoft.composition.Dispose(System.Boolean)">
+        <member name="M:GlycReSoft.CompositionHypothesisTabbedForm.Dispose(System.Boolean)">
             <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
-        <member name="M:GlycReSoft.composition.InitializeComponent">
+        <member name="M:GlycReSoft.CompositionHypothesisTabbedForm.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="M:GlycReSoft.composition.comphypo.Clone">
+        <member name="M:GlycReSoft.CompositionHypothesisEntry.Clone">
             <summary>
             Create a deep copy of the comphypo object.
             </summary>
             <returns></returns>
         </member>
-        <member name="M:GlycReSoft.composition.comphypo.CloneList(System.Collections.Generic.List{GlycReSoft.composition.comphypo})">
+        <member name="M:GlycReSoft.CompositionHypothesisEntry.CloneList(System.Collections.Generic.List{GlycReSoft.CompositionHypothesisEntry})">
             <summary>
             Create a deep copy of a list of comphypo objects.
             </summary>
@@ -250,18 +277,25 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="F:GlycReSoft.tag1Result.components">
+        <member name="M:GlycReSoft.MS1ResultsViewer.drawGraph(System.Collections.Generic.List{GlycReSoft.ResultsGroup}[],System.String)">
+            <summary>
+            This looks sketchy. TODO - Investigate
+            </summary>
+            <param name="predictedData"></param>
+            <param name="status"></param>
+        </member>
+        <member name="F:GlycReSoft.MS1ResultsViewer.components">
             <summary>
             Required designer variable.
             </summary>
         </member>
-        <member name="M:GlycReSoft.tag1Result.Dispose(System.Boolean)">
+        <member name="M:GlycReSoft.MS1ResultsViewer.Dispose(System.Boolean)">
             <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
-        <member name="M:GlycReSoft.tag1Result.InitializeComponent">
+        <member name="M:GlycReSoft.MS1ResultsViewer.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.

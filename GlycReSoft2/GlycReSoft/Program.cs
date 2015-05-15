@@ -49,7 +49,7 @@ namespace GlycReSoft
                     {
                         MessageBox.Show("Error in creating composition file. Error:" + mainex.Message);
                     }
-                    System.Threading.Thread.Sleep(2000);
+                    System.Threading.Thread.Sleep(1000);
                     th.Abort();
                     //Run the Program.
                     HomeScreen mainForm = new HomeScreen();

@@ -121,9 +121,9 @@ namespace GlycReSoft
         {
             //Obtain Feature
             Feature Ans = new Feature();
-            supervisedLearning SL = new supervisedLearning();
-            composition comp = new composition();
-            List<composition.comphypo> comhy = comp.getCompHypo(oFDComposition.FileName);
+            SupervisedLearner SL = new SupervisedLearner();
+            CompositionHypothesisTabbedForm comp = new CompositionHypothesisTabbedForm();
+            List<CompositionHypothesisEntry> comhy = comp.getCompHypo(oFDComposition.FileName);
             Ans = SL.obtainFeatures(oFDTrain, comhy);
 
             //Write Features to File
@@ -151,7 +151,7 @@ namespace GlycReSoft
         //Generate GlycanCompositions Hypothesis Button
         private void button5_Click(object sender, EventArgs e)
         {
-            composition opencompo = new composition();
+            CompositionHypothesisTabbedForm opencompo = new CompositionHypothesisTabbedForm();
             opencompo.Show();
         }
 
@@ -356,7 +356,7 @@ namespace GlycReSoft
         //Edit Parameters Button
         private void button10_Click(object sender, EventArgs e)
         {
-            parameters pd = new parameters();
+            ParametersForm pd = new ParametersForm();
             pd.Show();
         }
 
@@ -507,19 +507,19 @@ namespace GlycReSoft
             richTextBox7.Font = new Font("Times New Roman", 12);
             richTextBox7.Text = fileInfo;
         }
-        public List<composition.PPMSD> readtablim(String currentpath)
+        public List<Peptide> readtablim(String currentpath)
         {
-            List<composition.PPMSD> data = new List<composition.PPMSD>();
+            List<Peptide> data = new List<Peptide>();
             FileStream FS = new FileStream(currentpath, FileMode.Open, FileAccess.Read);
             StreamReader read = new StreamReader(FS);
             //skip title line:
             read.ReadLine();
             while (read.Peek() >= 0)
             {
-                composition.PPMSD pp = new composition.PPMSD();
+                Peptide pp = new Peptide();
                 String line = read.ReadLine();
                 String[] Lines = line.Split('\t');
-                pp.number = Convert.ToInt32(Lines[0]);
+                pp.PeptideIndex = Convert.ToInt32(Lines[0]);
                 pp.Mass = Convert.ToDouble(Lines[1]);
                 pp.Charge = Convert.ToInt32(Lines[3]);
                 pp.Modifications = Convert.ToString(Lines[4]);
@@ -636,24 +636,24 @@ namespace GlycReSoft
         //This function draws the ROC curve by the TP and FP rates calculated from the score.
         private void scoreBasedGraph()
         {
-            composition comp = new composition();
-            supervisedLearning SL = new supervisedLearning();
+            CompositionHypothesisTabbedForm comp = new CompositionHypothesisTabbedForm();
+            SupervisedLearner SL = new SupervisedLearner();
             Feature Fea = readFeature(oFDAddFeatureFiles.FileName);
             //Create the list of random composition hypotesis for testing FDR. 
             //ObtainTrue Position data.
-            List<composition.comphypo> CH = comp.getCompHypo(oFDCompositionTest.FileName);
-            List<groupingResults>[] TrueDATA = SL.evaluate(oFDTest, CH, Fea);
+            List<CompositionHypothesisEntry> CH = comp.getCompHypo(oFDCompositionTest.FileName);
+            List<ResultsGroup>[] TrueDATA = SL.EvaluateFeature(oFDTest, CH, Fea);
 
             this.drawGraph(TrueDATA, " Loaded Features");
 
 
             //Checkbox1 is default features.####################################
-            List<groupingResults>[] DefaultFeature = new List<groupingResults>[oFDTest.FileNames.Count()];
+            List<ResultsGroup>[] DefaultFeature = new List<ResultsGroup>[oFDTest.FileNames.Count()];
             String path = Application.StartupPath + "\\FeatureDefault.fea";
             Feature DeFea = readFeature(path);
             if (checkBox1.Checked == true)
             {
-                List<groupingResults>[] TrueDATADefault = SL.evaluate(oFDTest, CH, DeFea);
+                List<ResultsGroup>[] TrueDATADefault = SL.EvaluateFeature(oFDTest, CH, DeFea);
 
                 this.drawGraph(TrueDATADefault, " Default Features");
             }
@@ -664,12 +664,12 @@ namespace GlycReSoft
             
             if (checkBox2.Checked == true)
             {
-                unsupervisedLearning UL = new unsupervisedLearning();
-                List<groupingResults>[] USLTrueDATA = UL.evaluate(oFDTest, Fea);
+                UnsupervisedLearner UL = new UnsupervisedLearner();
+                List<ResultsGroup>[] USLTrueDATA = UL.evaluate(oFDTest, Fea);
                 //ROC curve needs match to perform, so we will use the match list from Supervised learning and apply them to USLDATA.
                 for (int i = 0; i < oFDTest.FileNames.Count(); i++)
                 {
-                    USLTrueDATA[i] = USLTrueDATA[i].OrderByDescending(b => b.DeconRow.monoisotopic_mw).ToList();
+                    USLTrueDATA[i] = USLTrueDATA[i].OrderByDescending(b => b.DeconRow.MonoisotopicMassWeight).ToList();
                     int USllasttruematch = 0;
                     for (int j = 0; j < TrueDATA[i].Count; j++)
                     {
@@ -677,19 +677,19 @@ namespace GlycReSoft
                         {
                             for (int k = USllasttruematch; k < USLTrueDATA[i].Count; k++)
                             {
-                                if (USLTrueDATA[i][k].DeconRow.monoisotopic_mw < TrueDATA[i][j].DeconRow.monoisotopic_mw)
+                                if (USLTrueDATA[i][k].DeconRow.MonoisotopicMassWeight < TrueDATA[i][j].DeconRow.MonoisotopicMassWeight)
                                 {
                                     USllasttruematch = k;
                                     break;
                                 }
-                                if (USLTrueDATA[i][k].DeconRow.monoisotopic_mw == TrueDATA[i][j].DeconRow.monoisotopic_mw)
+                                if (USLTrueDATA[i][k].DeconRow.MonoisotopicMassWeight == TrueDATA[i][j].DeconRow.MonoisotopicMassWeight)
                                 {
                                     USLTrueDATA[i][k].Match = true;
-                                    USLTrueDATA[i][k].comphypo = TrueDATA[i][j].comphypo;
+                                    USLTrueDATA[i][k].PredictedComposition = TrueDATA[i][j].PredictedComposition;
                                     USllasttruematch = k + 1;
                                     break;
                                 }
-                                if (USLTrueDATA[i][k].DeconRow.monoisotopic_mw > TrueDATA[i][j].DeconRow.monoisotopic_mw)
+                                if (USLTrueDATA[i][k].DeconRow.MonoisotopicMassWeight > TrueDATA[i][j].DeconRow.MonoisotopicMassWeight)
                                 {
                                     USLTrueDATA[i][k].Match = false;
                                 }
@@ -718,7 +718,7 @@ namespace GlycReSoft
                 dataGridView1.DataSource = TF[0];
             }));
         }
-        private void drawGraph(List<groupingResults>[] TrueDATA, String status)
+        private void drawGraph(List<ResultsGroup>[] TrueDATA, String status)
         {
             for (int i = 0; i < TrueDATA.Count(); i++)
             {
@@ -738,7 +738,7 @@ namespace GlycReSoft
                 store.Columns.Add("True Positive Rate", typeof(Double));
                 store.TableName = oFDTest.SafeFileNames[i] + status;
                 store.Rows.Add(1.001, 0, 0);
-                List<groupingResults> True = TrueDATA[i].OrderByDescending(a => a.Score).ToList();
+                List<ResultsGroup> True = TrueDATA[i].OrderByDescending(a => a.Score).ToList();
 
                 Double TrueTotal = 0.000000000001;
                 Double FalseTotal = 0.000000000001;
@@ -810,40 +810,40 @@ namespace GlycReSoft
         //This function draws the ROC curve by the TP and FP rates calculated from the false data set
         private void FDSBasedGraph()
         {
-            composition comp = new composition();
-            supervisedLearning SL = new supervisedLearning();
+            CompositionHypothesisTabbedForm comp = new CompositionHypothesisTabbedForm();
+            SupervisedLearner SL = new SupervisedLearner();
             Feature Fea = readFeature(oFDAddFeatureFiles.FileName);
             //Create the list of random composition hypotesis for testing FDR. 
             //ObtainTrue Position data.
-            List<composition.comphypo> CH = comp.getCompHypo(oFDCompositionTest.FileName);
+            List<CompositionHypothesisEntry> CH = comp.getCompHypo(oFDCompositionTest.FileName);
             falseDataset fD = new falseDataset();
-            List<composition.comphypo> falseCH = fD.genFalse(oFDcposTest.FileName, CH, oFDPPMSD);
-            List<groupingResults>[] FalseDATA = SL.evaluate(oFDTest, falseCH, Fea);
+            List<CompositionHypothesisEntry> falseCH = fD.genFalse(oFDcposTest.FileName, CH, oFDPPMSD);
+            List<ResultsGroup>[] FalseDATA = SL.EvaluateFeature(oFDTest, falseCH, Fea);
 
             this.drawGraph(FalseDATA, " Loaded Features", 0);
 
 
             //Checkbox1 is default features.####################################
-            List<groupingResults>[] DefaultFeature = new List<groupingResults>[oFDTest.FileNames.Count()];
+            List<ResultsGroup>[] DefaultFeature = new List<ResultsGroup>[oFDTest.FileNames.Count()];
             String path = Application.StartupPath + "\\FeatureDefault.fea";
             Feature DeFea = readFeature(path);
             if (checkBox1.Checked == true)
             {
-                List<groupingResults>[] FalseDATADefault = SL.evaluate(oFDTest, falseCH, DeFea);
+                List<ResultsGroup>[] FalseDATADefault = SL.EvaluateFeature(oFDTest, falseCH, DeFea);
                 this.drawGraph(FalseDATADefault, " Default Features", 0);
             }
 
             //################################################
             //Checkbox2 is unsupervised Learning. It is a bit different from supervised learning, so it is hard-coded here.
-            unsupervisedLearning UL = new unsupervisedLearning();
+            UnsupervisedLearner UL = new UnsupervisedLearner();
             if (checkBox2.Checked == true)
             {
-                List<groupingResults>[] USLFalseDATA = UL.evaluate(oFDTest, Fea);
+                List<ResultsGroup>[] USLFalseDATA = UL.evaluate(oFDTest, Fea);
                 //ROC curve needs match to perform, so we will use the match list from Supervised learning and apply them to USLDATA.
                 for (int i = 0; i < oFDTest.FileNames.Count(); i++)
                 {
-                    FalseDATA[i] = FalseDATA[i].OrderByDescending(a => a.DeconRow.monoisotopic_mw).ToList();
-                    USLFalseDATA[i] = USLFalseDATA[i].OrderByDescending(b => b.DeconRow.monoisotopic_mw).ToList();
+                    FalseDATA[i] = FalseDATA[i].OrderByDescending(a => a.DeconRow.MonoisotopicMassWeight).ToList();
+                    USLFalseDATA[i] = USLFalseDATA[i].OrderByDescending(b => b.DeconRow.MonoisotopicMassWeight).ToList();
                     int USllasttruematch = 0;
                     for (int j = 0; j < FalseDATA[i].Count; j++)
                     {
@@ -851,19 +851,19 @@ namespace GlycReSoft
                         {
                             for (int k = USllasttruematch; k < USLFalseDATA[i].Count; k++)
                             {
-                                if (USLFalseDATA[i][k].DeconRow.monoisotopic_mw < FalseDATA[i][j].DeconRow.monoisotopic_mw)
+                                if (USLFalseDATA[i][k].DeconRow.MonoisotopicMassWeight < FalseDATA[i][j].DeconRow.MonoisotopicMassWeight)
                                 {
                                     USllasttruematch = k;
                                     break;
                                 }
-                                if (USLFalseDATA[i][k].DeconRow.monoisotopic_mw == FalseDATA[i][j].DeconRow.monoisotopic_mw)
+                                if (USLFalseDATA[i][k].DeconRow.MonoisotopicMassWeight == FalseDATA[i][j].DeconRow.MonoisotopicMassWeight)
                                 {
                                     USLFalseDATA[i][k].Match = true;
-                                    USLFalseDATA[i][k].comphypo = FalseDATA[i][j].comphypo;
+                                    USLFalseDATA[i][k].PredictedComposition = FalseDATA[i][j].PredictedComposition;
                                     USllasttruematch = k + 1;
                                     break;
                                 }
-                                if (USLFalseDATA[i][k].DeconRow.monoisotopic_mw > FalseDATA[i][j].DeconRow.monoisotopic_mw)
+                                if (USLFalseDATA[i][k].DeconRow.MonoisotopicMassWeight > FalseDATA[i][j].DeconRow.MonoisotopicMassWeight)
                                 {
                                     USLFalseDATA[i][k].Match = false;
                                 }
@@ -892,7 +892,7 @@ namespace GlycReSoft
                 dataGridView1.DataSource = TF[0];
             }));
         }
-        private void drawGraph(List<groupingResults>[] FalseDATA, String status, int isfalse)
+        private void drawGraph(List<ResultsGroup>[] FalseDATA, String status, int isfalse)
         {
             for (int i = 0; i < FalseDATA.Count(); i++)
             {
@@ -913,7 +913,7 @@ namespace GlycReSoft
                 store.TableName = oFDTest.SafeFileNames[i] + status;
                 store.Rows.Add(1.001, 0, 0);
 
-                List<groupingResults> False = FalseDATA[i].OrderByDescending(b => b.Score).ToList();
+                List<ResultsGroup> False = FalseDATA[i].OrderByDescending(b => b.Score).ToList();
 
                 Double TrueTotal = 0.000000000001;
                 Double FalseTotal = 0.000000000001;
@@ -923,9 +923,9 @@ namespace GlycReSoft
                 {
                     if (False[j].Match == true)
                     {
-                        if (False[j].comphypo.TrueOrFalse == false)
+                        if (False[j].PredictedComposition.IsDecoy == false)
                             FalseTotal = FalseTotal + False[j].Score;
-                        if (False[j].comphypo.TrueOrFalse == true)
+                        if (False[j].PredictedComposition.IsDecoy == true)
                             TrueTotal = TrueTotal + False[j].Score;
                     }
                 }
@@ -950,9 +950,9 @@ namespace GlycReSoft
                         }
                         if (False[j].Match == true)
                         {
-                            if (False[j].comphypo.TrueOrFalse == false)
+                            if (False[j].PredictedComposition.IsDecoy == false)
                                 FalsePositive = FalsePositive + False[j].Score;
-                            if (False[j].comphypo.TrueOrFalse == true)
+                            if (False[j].PredictedComposition.IsDecoy == true)
                                 TruePositive = TruePositive + False[j].Score;
                         }
                         else

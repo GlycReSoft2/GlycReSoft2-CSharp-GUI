@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using System.IO;
 using Accord.Statistics;
 using Accord.Statistics.Analysis;
+using GlycReSoft.GlycReSoft2V1.DisplayForms;
+using BUPIDClient;
 
 
 namespace GlycReSoft
@@ -31,15 +33,15 @@ namespace GlycReSoft
         //This is the Save Parameter button. Clicking on it shows saveFileDialog1.
         private void button14_Click(object sender, EventArgs e)
         {
-            parameters savepara = new parameters();
-            savepara.saveParameters();
+            ParametersForm savepara = new ParametersForm();
+            savepara.SaveParameters();
         }
 
         //This is the lod dialog for load Parameters.
         private void button22_Click(object sender, EventArgs e)
         {
-            parameters loadpara = new parameters();
-            loadpara.loadParameters();
+            ParametersForm loadpara = new ParametersForm();
+            loadpara.LoadParameters();
         }
 
         //Link to Decon Tools
@@ -50,7 +52,7 @@ namespace GlycReSoft
         //About button
         private void button2_Click_1(object sender, EventArgs e)
         {
-            AboutBox1 ab1 = new AboutBox1();
+            AboutWindow ab1 = new AboutWindow();
             ab1.ShowDialog();
         }
         //Combine Results
@@ -118,7 +120,7 @@ namespace GlycReSoft
         {
             if (oFDDeconData != null)
             {
-                tag1Result t1r = new tag1Result(oFDDeconData);
+                MS1ResultsViewer t1r = new MS1ResultsViewer(oFDDeconData);
                 t1r.Show();
             }
             else
@@ -137,7 +139,7 @@ namespace GlycReSoft
         }
         private void oFDGenerator_FileOk(object sender, CancelEventArgs e)
         {
-            composition comp = new composition();
+            CompositionHypothesisTabbedForm comp = new CompositionHypothesisTabbedForm();
             button3.Enabled = true;
         }
         //This is the "Supervised Learning" Button. It performs supervised learning by calling the supervisedLearning class.
@@ -145,7 +147,7 @@ namespace GlycReSoft
         {
             if (oFDDeconData != null)
             {
-                tag1Result t1r = new tag1Result(oFDDeconData, oFDGenerator.FileName);
+                MS1ResultsViewer t1r = new MS1ResultsViewer(oFDDeconData, oFDGenerator.FileName);
                 t1r.Show();
             }
             else
@@ -156,7 +158,7 @@ namespace GlycReSoft
 
         private void button5_Click(object sender, EventArgs e)
         {
-            composition opencompo = new composition();
+            CompositionHypothesisTabbedForm opencompo = new CompositionHypothesisTabbedForm();
             opencompo.Show();
         }
 
@@ -166,14 +168,14 @@ namespace GlycReSoft
         //This is the Apply Changes button on top of unsupervised learning. It applies the Parameters.
         private void button24_Click(object sender, EventArgs e)
         {
-            parameters para = new parameters();
-            para.applypara();
+            ParametersForm para = new ParametersForm();
+            para.ApplyParameters();
         }
 
 
         private void button19_Click(object sender, EventArgs e)
         {
-            (new parameters()).Show();
+            (new ParametersForm()).Show();
         }
 
         //Help button
@@ -191,6 +193,12 @@ namespace GlycReSoft
         {
             var tandemMSUI = new GlycReSoft.TandemMSGlycopeptideGUI.TandemGlycopeptideAnalysis();
             tandemMSUI.Show();
+        }
+
+        private void BUPIDTopDownButton_Click(object sender, EventArgs e)
+        {
+            BUPIDClientWindow BUPIDClient = new BUPIDClientWindow();
+            BUPIDClient.Show();
         }
 
 

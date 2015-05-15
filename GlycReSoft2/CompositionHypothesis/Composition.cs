@@ -15,13 +15,20 @@ namespace GlycReSoft.CompositionHypothesis
 
     public class GlycanComposition : IComposition
     {
+        public static Double WaterMass = 18.0105647;
         public Dictionary<string, int> ElementalComposition;
         public Dictionary<string, int> MolecularComposition;        
         public double MassWeight;
         public int AdductAmount;
         public string AdductReplaces;
         public string Annotation;
-
+        public double AdductMass
+        {
+            get
+            {
+                return Convert.ToDouble(AdductReplaces.Split('/')[1]) * AdductAmount;
+            }
+        }
         /// <summary>
         /// Create an empty GlycanCompositions instance
         /// </summary>
@@ -67,11 +74,18 @@ namespace GlycReSoft.CompositionHypothesis
             String[] lineData = compositionLine.Split(',');            
             //Extract MassWeight
             MassWeight = Convert.ToDouble(lineData[0]);
+            foreach (string ele in elementNames)
+            {
+                Console.WriteLine(ele);
+            }
             for (; index < elementNames.Count + 1; index++)
             {
                 columnData = lineData[index];
                 //The index into the elementNames list is off by one since the 
                 //Elements start at column 1 instead of 0
+                Console.WriteLine(index);
+                Console.WriteLine(elementNames[index - 1]);
+                Console.WriteLine(columnData);
                 this.ElementalComposition.Add(elementNames[index - 1], Convert.ToInt32(columnData));
             }
             index += 1;
@@ -96,9 +110,18 @@ namespace GlycReSoft.CompositionHypothesis
             string molecularCompositionTuple = "";
             foreach (string moleculeName in moleculeNames)
             {
-                molecularCompositionTuple += this.MolecularComposition[moleculeName] + ";";
+                if (this.MolecularComposition.ContainsKey(moleculeName))
+                {
+                    molecularCompositionTuple += this.MolecularComposition[moleculeName] + ";";
+                }
+                else
+                {
+                    molecularCompositionTuple += "0;";
+                }
+                
             }
-            return molecularCompositionTuple;
+            molecularCompositionTuple = molecularCompositionTuple.Remove(molecularCompositionTuple.Length - 1);
+            return "[" + molecularCompositionTuple + "]";
         }
 
         public string CsvSerializeLine(List<string> elementNames, List<string> moleculeNames)
@@ -107,17 +130,26 @@ namespace GlycReSoft.CompositionHypothesis
             repr += Convert.ToString(MassWeight) + ',';
             foreach (string elementName in elementNames)
             {
-                repr += ElementalComposition[elementName] + ',';
+                if (ElementalComposition.ContainsKey(elementName))
+                {
+                    repr += Convert.ToString(ElementalComposition[elementName]) + ",";
+                }
+                else
+                {
+                    repr += "0,";
+                }
             }
-            string molecularCompositionTuple = "[";
+            repr += GlycanCompositionTuple(moleculeNames) + ",";
             foreach (string moleculeName in moleculeNames)
             {
-                molecularCompositionTuple += this.MolecularComposition[moleculeName] + ";";
-            }
-            repr += molecularCompositionTuple.TrimEnd(';') + "],";
-            foreach (string moleculeName in moleculeNames)
-            {
-                repr += MolecularComposition[moleculeName] + ',';
+                if (MolecularComposition.ContainsKey(moleculeName))
+                {
+                    repr += this.MolecularComposition[moleculeName] + ",";
+                }
+                else
+                {
+                    repr += "0,";
+                }
             }
             repr += AdductReplaces + ',';
             repr += AdductAmount;
@@ -133,7 +165,11 @@ namespace GlycReSoft.CompositionHypothesis
         public int GlycosylationCount;
         public int StartAA;
         public int EndAA;
+        public string ProteinID;
 
+        /// <summary>
+        /// Empty Constructor
+        /// </summary>
         public GlycopeptideComposition()
             : base()
         {
@@ -143,8 +179,13 @@ namespace GlycReSoft.CompositionHypothesis
             EndAA = -1;
             PeptideSequence = null;
             PeptideModification = null;
+            ProteinID = null;
         }
 
+        /// <summary>
+        /// Copy Constructor
+        /// </summary>
+        /// <param name="other"></param>
         public GlycopeptideComposition(GlycopeptideComposition other)
             : base(other as GlycanComposition)
         {
@@ -154,8 +195,13 @@ namespace GlycReSoft.CompositionHypothesis
             this.EndAA = other.EndAA;
             this.PeptideSequence = other.PeptideSequence;
             this.PeptideModification = other.PeptideModification;
+            this.ProteinID = other.ProteinID;
         }
 
+        /// <summary>
+        /// Peptide-Only Constructor
+        /// </summary>
+        /// <param name="peptide"></param>
         public GlycopeptideComposition(MSDigestPeptide peptide)
             : base()
         {
@@ -163,23 +209,46 @@ namespace GlycReSoft.CompositionHypothesis
             this.PeptideModification = peptide.Modifications;
             this.StartAA = peptide.StartAA;
             this.EndAA = peptide.EndAA;
-            this.GlycosylationCount = peptide.numGly;
+            this.GlycosylationCount = peptide.NumGlycosylations;
             this.MassWeight += peptide.Mass;
+            this.ProteinID = peptide.ProteinID;
         }
 
+        /// <summary>
+        /// Combination Cosntructor
+        /// </summary>
+        /// <param name="glycanComposition"></param>
+        /// <param name="peptide"></param>
         public GlycopeptideComposition(GlycanComposition glycanComposition, MSDigestPeptide peptide) : base(glycanComposition)
         {
             this.PeptideSequence = peptide.Sequence;
             this.PeptideModification = peptide.Modifications;
             this.StartAA = peptide.StartAA;
             this.EndAA = peptide.EndAA;
-            this.GlycosylationCount = peptide.numGly;
-            this.MassWeight += peptide.Mass;
+            this.GlycosylationCount = peptide.NumGlycosylations;
+            this.MassWeight += peptide.Mass - WaterMass - glycanComposition.AdductMass;
+            MolecularComposition["Water"] -= 1;
+            if (ElementalComposition.ContainsKey("O"))
+            {
+                ElementalComposition["O"] -= 1;
+                ElementalComposition["H"] -= 2;
+            }
+            this.ProteinID = peptide.ProteinID;
+
+            AdductAmount = 0;
+            AdductReplaces = "";
+
         }
 
+
+        /// <summary>
+        /// Incorporate the components of a GlycanComposition object into
+        /// this glycopeptide.
+        /// </summary>
+        /// <param name="glycanComposition"></param>
         public void AttachGlycan(GlycanComposition glycanComposition)
         {
-            this.MassWeight += glycanComposition.MassWeight;
+            this.MassWeight += glycanComposition.MassWeight - WaterMass - glycanComposition.AdductMass;
             this.GlycosylationCount++;
             foreach (KeyValuePair<string, int> kvp in glycanComposition.ElementalComposition)
             {
@@ -203,6 +272,20 @@ namespace GlycReSoft.CompositionHypothesis
                     MolecularComposition[kvp.Key] += kvp.Value;
                 }
             }
+            if (MolecularComposition.ContainsKey("Water"))
+            {
+                MolecularComposition["Water"] -= 1;
+            }
+            else
+            {
+                Console.WriteLine(JsonConvert.SerializeObject(this));
+                throw new Exception("No water found to remove!");
+            }
+            if (ElementalComposition.ContainsKey("O"))
+            {
+                ElementalComposition["O"] -= 1;
+                ElementalComposition["H"] -= 2;
+            }
             //Adduct information is a singleton despite there being multiple glycans per peptide. 
             //Is this actually correct chemically?
             this.AdductReplaces = glycanComposition.AdductReplaces;
@@ -211,6 +294,15 @@ namespace GlycReSoft.CompositionHypothesis
 
         }
 
+        /// <summary>
+        /// Convert a line of a CSV file into a GlycopeptideComposition object given element and molecule labels.
+        /// Parsing starts from column @start
+        /// </summary>
+        /// <param name="compositionLine"></param>
+        /// <param name="elementNames"></param>
+        /// <param name="moleculeNames"></param>
+        /// <param name="start"></param>
+        /// <returns></returns>
         public new int ParseLine(string compositionLine, List<string> elementNames, List<string> moleculeNames, int start = 1)
         {
             int index = base.ParseLine(compositionLine, elementNames, moleculeNames, start);
@@ -222,21 +314,36 @@ namespace GlycReSoft.CompositionHypothesis
             this.GlycosylationCount = Convert.ToInt32(lineData[index++]);
             this.StartAA = Convert.ToInt32(lineData[index++]);
             this.EndAA = Convert.ToInt32(lineData[index++]);
+            if (lineData.Length > index)
+            {
+                this.ProteinID = lineData[index++];
+            }
+            else
+            {
+                this.ProteinID = "?";
+            }
+            
 
             return index;
         }
 
+        /// <summary>
+        /// Calls GlycanComposition's CsvSerializeLine function and then adds peptide-related features to the line
+        /// </summary>
+        /// <param name="elementNames"></param>
+        /// <param name="moleculeNames"></param>
+        /// <returns></returns>
         public new string CsvSerializeLine(List<string> elementNames, List<string> moleculeNames)
         {
             string repr = base.CsvSerializeLine(elementNames, moleculeNames);
 
-            repr += ',' + PeptideSequence + ',';
-            repr += PeptideModification + ',';
-            repr += MissedCleavages + ',';
-            repr += GlycosylationCount + ',';
-            repr += StartAA + ',';
-            repr += EndAA;
-
+            repr += "," + PeptideSequence + ",";
+            repr += PeptideModification + ",";
+            repr += MissedCleavages + ",";
+            repr += GlycosylationCount + ",";
+            repr += StartAA + ",";
+            repr += EndAA + ",";
+            repr += ProteinID;
             return repr;
         }
 

@@ -61,6 +61,24 @@ namespace GlycReSoft.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        public static string bupidEnabled {
+            get {
+                return ResourceManager.GetString("bupidEnabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to http://bumc-florida.bumc.bu.edu/BUPID_TD/.
+        /// </summary>
+        public static string bupidUrl {
+            get {
+                return ResourceManager.GetString("bupidUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Letter,Molecule,C,H,N,O,S,P,Lower Bound,Upper Bound
         ///A,G:Pentose,5,8,0,4,0,0,0,0
         ///B,G:dHex,6,10,0,4,0,0,0,0

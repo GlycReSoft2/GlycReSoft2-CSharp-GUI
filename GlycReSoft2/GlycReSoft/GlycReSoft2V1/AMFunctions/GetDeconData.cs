@@ -12,8 +12,8 @@ namespace GlycReSoft
         List<DeconRow> DeconDATA = new List<DeconRow>();
         public List<DeconRow> getdata (String DeconData)
         {
-            parameters parad = new parameters();
-            parameters.para paradata = parad.getParameters();
+            ParametersForm parad = new ParametersForm();
+            ParametersForm.ParameterSettings paradata = parad.GetParameters();
 
             //try
            // {
@@ -27,19 +27,19 @@ namespace GlycReSoft
                     DeconRow Row = new DeconRow();
                     String Line = readdata.ReadLine();
                     String[] column = Line.Split(',');
-                    Row.scan_num = Convert.ToInt32(column[0]);
+                    Row.ScanNum = Convert.ToInt32(column[0]);
                     Row.charge = Convert.ToInt32(column[1]);
                     Row.abundance = Convert.ToInt32(column[2]);
                     Row.mz = Convert.ToDouble(column[3]);
                     Row.fit = Convert.ToDouble(column[4]);
                     Row.average_mw = Convert.ToDouble(column[5]);
-                    Row.monoisotopic_mw = Convert.ToDouble(column[6]);
+                    Row.MonoisotopicMassWeight = Convert.ToDouble(column[6]);
                     Row.mostabundant_mw = Convert.ToDouble(column[7]);
                     Row.fwhm = Convert.ToDouble(column[8]);
-                    Row.signal_noise = Convert.ToDouble(column[9]);
-                    Row.mono_abundance = Convert.ToInt32(column[10]);
+                    Row.SignalNoiseRatio = Convert.ToDouble(column[9]);
+                    Row.MonoisotopicAbundance = Convert.ToInt32(column[10]);
                     Double mp2a = Convert.ToDouble(column[11]);
-                    Row.mono_plus2_abundance = Convert.ToInt32(mp2a);
+                    Row.MonoisotopicPlus2Abundance = Convert.ToInt32(mp2a);
                     //Flag maybe empty, so, special treatment.
                     if (column[12] == "")
                     { Row.flag = 0; }                    
@@ -50,11 +50,11 @@ namespace GlycReSoft
                     else
                         Row.interference_sore = 0;
                     //Check if the data are within the boundaries of the Parameters
-                    if (Row.abundance >= paradata.dataNoiseTheshold)
+                    if (Row.abundance >= paradata.DataNoiseTheshold)
                     {
-                        if (Row.monoisotopic_mw <= paradata.molecularWeightUpperBound)
+                        if (Row.MonoisotopicMassWeight <= paradata.MolecularWeightUpperBound)
                         {
-                            if (Row.monoisotopic_mw >= paradata.molecularWeightLowerBound)
+                            if (Row.MonoisotopicMassWeight >= paradata.MolecularWeightLowerBound)
                             {
                                 DeconDATA.Add(Row);
                             }
@@ -267,18 +267,18 @@ namespace GlycReSoft
     // Each "DeconRow" variable stores one row from an isos file, so that a list of DeconRows can store a whole isos file. 
     public class DeconRow
     {
-        public Int32 scan_num { get; set; }
+        public Int32 ScanNum { get; set; }
         public Int32 charge { get; set; }
         public Int32 abundance { get; set; }
         public Double mz { get; set; }
         public Double fit { get; set; }
         public Double average_mw { get; set; }
-        public Double monoisotopic_mw { get; set; }
+        public Double MonoisotopicMassWeight { get; set; }
         public Double mostabundant_mw { get; set; }
         public Double fwhm { get; set; }
-        public Double signal_noise { get; set; }
-        public Int32 mono_abundance { get; set; }
-        public Int32 mono_plus2_abundance { get; set; }
+        public Double SignalNoiseRatio { get; set; }
+        public Int32 MonoisotopicAbundance { get; set; }
+        public Int32 MonoisotopicPlus2Abundance { get; set; }
         public Int32 flag { get; set; }
         public Double interference_sore { get; set; }
     }

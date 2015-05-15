@@ -12,7 +12,7 @@ namespace GlycReSoft
 {
     public partial class FormerResults : Form
     {
-        private static List<groupingResults>[] AllFinalResults;
+        private static List<ResultsGroup>[] AllFinalResults;
         public FormerResults()
         {
             InitializeComponent();
@@ -50,10 +50,10 @@ namespace GlycReSoft
             button9.Enabled = true;
             button2.Enabled = true;
             GroupingResults GR = new GroupingResults();
-            List<groupingResults>[] ResultStore = new List<groupingResults>[oFDResults.FileNames.Count()];
+            List<ResultsGroup>[] ResultStore = new List<ResultsGroup>[oFDResults.FileNames.Count()];
             for (int i = 0; i < oFDResults.FileNames.Count(); i++)
             {
-                ResultStore[i] = GR.readResultFile(oFDResults.FileNames[i]);
+                ResultStore[i] = GR.ReadResultsFromFile(oFDResults.FileNames[i]);
             }
             AllFinalResults = ResultStore;
         }
@@ -72,14 +72,14 @@ namespace GlycReSoft
         private void button9_Click(object sender, EventArgs e)
         {
             GroupingResults GR = new GroupingResults();
-            List<groupingResults>[] results = new List<groupingResults>[oFDResults.FileNames.Count()];
+            List<ResultsGroup>[] results = new List<ResultsGroup>[oFDResults.FileNames.Count()];
             for (int i = 0; i < oFDResults.FileNames.Count(); i++)
             {
-                results[i] = GR.readResultFile(oFDResults.FileNames[i]);
+                results[i] = GR.ReadResultsFromFile(oFDResults.FileNames[i]);
             }
-            List<groupingResults> Answer = new List<groupingResults>();
-            Answer = GR.combineResults(results);
-            List<groupingResults>[] Ans = { Answer };
+            List<ResultsGroup> Answer = new List<ResultsGroup>();
+            Answer = GR.CombineResults(results);
+            List<ResultsGroup>[] Ans = { Answer };
             DataTable DT = toDataTable(Ans, 0);
             dataGridView3.DataSource = DT;
         }
@@ -171,7 +171,7 @@ namespace GlycReSoft
         //This function draws the ROC curve by the TP and FP rates calculated from the score.
         private void scoreBasedGraph()
         {
-            composition comp = new composition();
+            CompositionHypothesisTabbedForm comp = new CompositionHypothesisTabbedForm();
 
             Features FT = new Features();
             String currentpath = Application.StartupPath + "\\FeatureCurrent.fea";
@@ -195,7 +195,7 @@ namespace GlycReSoft
                 dataGridView2.DataSource = TF[0];
             }));
         }
-        private void drawGraph(List<groupingResults>[] TrueDATA, String status)
+        private void drawGraph(List<ResultsGroup>[] TrueDATA, String status)
         {
             for (int i = 0; i < TrueDATA.Count(); i++)
             {
@@ -215,7 +215,7 @@ namespace GlycReSoft
                 store.Columns.Add("True Positive Rate", typeof(Double));
                 store.TableName = oFDResults.SafeFileNames[i] + status;
                 store.Rows.Add(1.001, 0, 0);
-                List<groupingResults> True = TrueDATA[i].OrderByDescending(a => a.Score).ToList();
+                List<ResultsGroup> True = TrueDATA[i].OrderByDescending(a => a.Score).ToList();
 
                 Double TrueTotal = 0.000000000001;
                 Double FalseTotal = 0.000000000001;
@@ -288,27 +288,27 @@ namespace GlycReSoft
 
         //Other Functions
         //Function that turns the AllFinalResult data into DataTable
-        private DataTable toDataTable(List<groupingResults>[] AFR, Int32 index)
+        private DataTable toDataTable(List<ResultsGroup>[] AFR, Int32 index)
         {
             //write.Write("Score,MassSpec MW,Compound Key,PPM Error,Hypothesis MW,#ofModificationStates,#ofCharges,#ofScans,Scan Density,Avg A:A+2 Error,A:A+2 Ratio,Total Volume,Signal to Noise Ratio,Centroid Scan Error,Centroid Scan,MaxScanNumber,MinScanNumber,C,H,N,O,S,P");
             List<string> elementIDs = new List<string>();
             List<string> molename = new List<string>();
             for (int i = 0; i < AFR[0].Count(); i++)
             {
-                if (AFR[0][i].comphypo.elementIDs.Count > 0)
+                if (AFR[0][i].PredictedComposition.ElementNames.Count > 0)
                 {
-                    for (int j = 0; j < AFR[0][i].comphypo.elementIDs.Count(); j++)
+                    for (int j = 0; j < AFR[0][i].PredictedComposition.ElementNames.Count(); j++)
                     {
-                        elementIDs.Add(AFR[0][i].comphypo.elementIDs[j]);
+                        elementIDs.Add(AFR[0][i].PredictedComposition.ElementNames[j]);
                     }
-                    for (int j = 0; j < AFR[0][i].comphypo.MoleNames.Count(); j++)
+                    for (int j = 0; j < AFR[0][i].PredictedComposition.MoleculeNames.Count(); j++)
                     {
-                        molename.Add(AFR[0][i].comphypo.MoleNames[j]);
+                        molename.Add(AFR[0][i].PredictedComposition.MoleculeNames[j]);
                     }
                     break;
                 }
             }
-            List<groupingResults> current = AFR[index];
+            List<ResultsGroup> current = AFR[index];
             DataTable output = new DataTable();
             output.Columns.Add("Score", typeof(Double));
             output.Columns.Add("MassSpec MW", typeof(Double));
@@ -356,59 +356,59 @@ namespace GlycReSoft
             output.Columns.Add("TotalVolumeSD",typeof(double));
             output.Columns.Add("RelativeTotalVolume", typeof(double));
             output.Columns.Add("RelativeTotalVolumeSD", typeof(double));
-            for (int i = 0; i < current[0].listOfOriginalTotalVolumes.Count(); i++)
+            for (int i = 0; i < current[0].ListOfOriginalTotalVolumes.Count(); i++)
             {
                 output.Columns.Add("File" + Convert.ToString(i+1) + "_TotalVolume", typeof(Double));
             }
 
-            foreach (groupingResults ch in current)
+            foreach (ResultsGroup ch in current)
             {
-                if (ch.comphypo.MW != 0)
+                if (ch.PredictedComposition.MassWeight != 0)
                 {
                     DataRow ab = output.NewRow();
                     Double MatchingError = 0;
-                    if (ch.comphypo.MW != 0)
-                        MatchingError = ((ch.DeconRow.monoisotopic_mw - ch.comphypo.MW) / (ch.DeconRow.monoisotopic_mw)) * 1000000;
+                    if (ch.PredictedComposition.MassWeight != 0)
+                        MatchingError = ((ch.DeconRow.MonoisotopicMassWeight - ch.PredictedComposition.MassWeight) / (ch.DeconRow.MonoisotopicMassWeight)) * 1000000;
                     ab[0] = ch.Score;
-                    ab[1] = ch.DeconRow.monoisotopic_mw;
-                    ab[2] = ch.comphypo.compoundCompo;
-                    ab[3] = ch.comphypo.PepSequence;
+                    ab[1] = ch.DeconRow.MonoisotopicMassWeight;
+                    ab[2] = ch.PredictedComposition.CompoundComposition;
+                    ab[3] = ch.PredictedComposition.PepSequence;
                     ab[4] = MatchingError;                    
-                    ab[5] = ch.numModiStates;
-                    ab[6] = ch.numChargeStates;
-                    ab[7] = ch.numOfScan;
+                    ab[5] = ch.NumModiStates;
+                    ab[6] = ch.NumChargeStates;
+                    ab[7] = ch.NumOfScan;
                     ab[8] = ch.ScanDensity;
                     ab[9] = ch.ExpectedA;
-                    ab[10] = ch.avgAA2List.Average();
-                    ab[11] = ch.totalVolume;
-                    ab[12] = ch.avgSigNoise;
+                    ab[10] = ch.AvgAA2List.Average();
+                    ab[11] = ch.TotalVolume;
+                    ab[12] = ch.AvgSigNoise;
                     ab[13] = ch.CentroidScan;
-                    ab[14] = ch.DeconRow.scan_num;
-                    ab[15] = ch.maxScanNum;
-                    ab[16] = ch.minScanNum;
+                    ab[14] = ch.DeconRow.ScanNum;
+                    ab[15] = ch.MaxScanNum;
+                    ab[16] = ch.MinScanNum;
                     int sh = 17;
                     for (int i = 0; i < elementCount; i++)
                     {
-                        ab[sh] = ch.comphypo.elementAmount[i];
+                        ab[sh] = ch.PredictedComposition.ElementAmount[i];
                         sh++;
                     }
-                    ab[sh] = ch.comphypo.MW;
+                    ab[sh] = ch.PredictedComposition.MassWeight;
                     sh++;
                     for (int s = 0; s < moleculeCount; s++)
                     {
-                        ab[sh + s] = ch.comphypo.eqCounts[s];
+                        ab[sh + s] = ch.PredictedComposition.eqCounts[s];
                     }
-                    ab[sh + moleculeCount] = ch.comphypo.AddRep;
-                    ab[sh + moleculeCount + 1] = ch.comphypo.AdductNum;
-                    ab[sh + moleculeCount + 2] = ch.comphypo.PepModification;
-                    ab[sh + moleculeCount + 3] = ch.comphypo.MissedCleavages;
-                    ab[sh + moleculeCount + 4] = ch.comphypo.numGly;
-                    ab[sh + moleculeCount + 5] = ch.totalVolumeSD;
-                    ab[sh + moleculeCount + 6] = ch.relativeTotalVolume;
-                    ab[sh + moleculeCount + 7] = ch.relativeTotalVolumeSD;
-                    for (int i = 0; i < ch.listOfOriginalTotalVolumes.Count(); i++)
+                    ab[sh + moleculeCount] = ch.PredictedComposition.AddRep;
+                    ab[sh + moleculeCount + 1] = ch.PredictedComposition.AdductNum;
+                    ab[sh + moleculeCount + 2] = ch.PredictedComposition.PepModification;
+                    ab[sh + moleculeCount + 3] = ch.PredictedComposition.MissedCleavages;
+                    ab[sh + moleculeCount + 4] = ch.PredictedComposition.NumGlycosylations;
+                    ab[sh + moleculeCount + 5] = ch.TotalVolumeSD;
+                    ab[sh + moleculeCount + 6] = ch.RelativeTotalVolume;
+                    ab[sh + moleculeCount + 7] = ch.RelativeTotalVolumeSD;
+                    for (int i = 0; i < ch.ListOfOriginalTotalVolumes.Count(); i++)
                     {
-                        ab[sh + moleculeCount + 8 + i] = ch.listOfOriginalTotalVolumes[i];
+                        ab[sh + moleculeCount + 8 + i] = ch.ListOfOriginalTotalVolumes[i];
                     }
                     output.Rows.Add(ab);
                 }
@@ -416,32 +416,32 @@ namespace GlycReSoft
                 {
                     DataRow ab = output.NewRow();
                     Double MatchingError = 0;
-                    if (ch.comphypo.MW != 0)
-                        MatchingError = ((ch.DeconRow.monoisotopic_mw - ch.comphypo.MW) / ch.DeconRow.monoisotopic_mw) * 1000000;
+                    if (ch.PredictedComposition.MassWeight != 0)
+                        MatchingError = ((ch.DeconRow.MonoisotopicMassWeight - ch.PredictedComposition.MassWeight) / ch.DeconRow.MonoisotopicMassWeight) * 1000000;
                     ab[0] = ch.Score;
-                    ab[1] = ch.DeconRow.monoisotopic_mw;
-                    ab[2] = ch.comphypo.compoundCompo;
-                    ab[3] = ch.comphypo.PepSequence;
+                    ab[1] = ch.DeconRow.MonoisotopicMassWeight;
+                    ab[2] = ch.PredictedComposition.CompoundComposition;
+                    ab[3] = ch.PredictedComposition.PepSequence;
                     ab[4] = MatchingError;
-                    ab[5] = ch.numModiStates;
-                    ab[6] = ch.numChargeStates;
-                    ab[7] = ch.numOfScan;
+                    ab[5] = ch.NumModiStates;
+                    ab[6] = ch.NumChargeStates;
+                    ab[7] = ch.NumOfScan;
                     ab[8] = ch.ScanDensity;
                     ab[9] = ch.ExpectedA;
-                    ab[10] = ch.avgAA2List.Average();
-                    ab[11] = ch.totalVolume;
-                    ab[12] = ch.avgSigNoise;
+                    ab[10] = ch.AvgAA2List.Average();
+                    ab[11] = ch.TotalVolume;
+                    ab[12] = ch.AvgSigNoise;
                     ab[13] = ch.CentroidScan;
-                    ab[14] = ch.DeconRow.scan_num;
-                    ab[15] = ch.maxScanNum;
-                    ab[16] = ch.minScanNum;
+                    ab[14] = ch.DeconRow.ScanNum;
+                    ab[15] = ch.MaxScanNum;
+                    ab[16] = ch.MinScanNum;
                     int sh = 17;
                     for (int i = 0; i < elementCount; i++)
                     {
                         ab[sh] = 0;
                         sh++;
                     }
-                    ab[sh] = ch.comphypo.MW;
+                    ab[sh] = ch.PredictedComposition.MassWeight;
                     sh++;
                     for (int s = 0; s < moleculeCount; s++)
                     {
@@ -452,12 +452,12 @@ namespace GlycReSoft
                     ab[sh + moleculeCount + 2] = "";
                     ab[sh + moleculeCount + 3] = 0;
                     ab[sh + moleculeCount + 4] = 0;
-                    ab[sh + moleculeCount + 5] = ch.totalVolumeSD;
-                    ab[sh + moleculeCount + 6] = ch.relativeTotalVolume;
-                    ab[sh + moleculeCount + 7] = ch.relativeTotalVolumeSD;
-                    for (int i = 0; i < ch.listOfOriginalTotalVolumes.Count(); i++)
+                    ab[sh + moleculeCount + 5] = ch.TotalVolumeSD;
+                    ab[sh + moleculeCount + 6] = ch.RelativeTotalVolume;
+                    ab[sh + moleculeCount + 7] = ch.RelativeTotalVolumeSD;
+                    for (int i = 0; i < ch.ListOfOriginalTotalVolumes.Count(); i++)
                     {
-                        ab[sh + moleculeCount + 8 + i] = ch.listOfOriginalTotalVolumes[i];
+                        ab[sh + moleculeCount + 8 + i] = ch.ListOfOriginalTotalVolumes[i];
                     }
                     output.Rows.Add(ab);
                 }
